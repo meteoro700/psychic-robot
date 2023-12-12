@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GODISH</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 1px;
+        }
+      
+
+        .nav {
+            overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  top: 1px;
+  overflow: visible;
+  z-index: 1;
+margin: 0px;
+height: -20px;
+  
+        }
+        .nav img {
+  margin-left: -77%;          
+  width: 7%;
+  transition: 0.5s ease;
+  transform: scale(1.9);
+  z-index: 2;
+}
+.nav a {
+  margin-left: 20%;          
+
+}
+        .nav a {
+            float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+        }
+    
+        .nav a:hover {
+  background-color: #fdd10b;
+  color: black;
+}
+
+        .main {
+            padding: 20px;
+        }
+        .container {
+            float: right;
+    max-width: 40%;
+
+    width: 40%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 5%;
+    margin-right: 10%;
+}
+.container1 {
+    float: left;
+    max-width: 40%;
+    width: 40%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 5%;
+    margin-left: 8%;
+}
+     h2, h3, h4 {
+    color: #444444;
+    margin-bottom: 5px;
+}
+ 
+
+.medio h3{
+    float: left;
+   color: #c7c7c7;
+   margin-top: 130px;
+margin-left: 95px;
+}
+.medio img{ 
+   margin-left: 10%;        
+  width: 40%;
+  transition: 0.5s ease;
+}
+.medio{
+    background-color: #272222;
+    margin: -2%;
+  
+
+}
+.mvp{
+    text-align: left;
+}
+.container img{
+    margin-top: -20px;
+    width: 100%;
+}
+.container1 img{
+    margin-top: -20px;
+    width: 100%;
+}
+
+    </style>
+</head>
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+<body>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            document.querySelector(".nav img").style.width = "30px";
+          } else {
+            document.querySelector(".nav img").style.width = "70px";
+          }
+        }
+            </script>
+    <div class="header">
+        <h1>Los Chicos Del Barrio</h1>
+    </div>
+    <div class="nav">
+        <img src="img/escudo.png" alt="losDelBarrio" >
+        <a href="index.html">Inicio</a>
+        <a href="jugadores.html">Jugadores</a>
+        <a href="clasificacion.html">Clasificacion</a>
+    </div>
+    <div class="main">
+        <br>
+        <div class="medio">
+<hr>
+
+
+<h3>“Si juego bien y gano,<br>
+    es NORMAL; <br> 
+    si juego bien y pierdo, <BR>
+    por lo menos obtuve un triunfo con el buen juego. <br>
+    En cambio, si juego mal y además pierdo,<BR>
+         sufro DOBLE DERROTA.”</h3>
+
+
+
+    <img src="img/facha.jpg" alt="benja">
+<hr>
+        </div>
+
+        <div class="container">    
+                <h1 class="mvp">&nbsp; &nbsp; MVP</h1>
+           <img src="img/mvp.jpg" alt="mvp">
+           <h3 class="list">&nbsp; Ranking  &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;   Nombre    &nbsp; &nbsp; &emsp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;&nbsp;&nbsp; Asistencia</h3>
+           <hr>
+           <h4 class="list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2        
+            &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp; &nbsp;&emsp;    Godish    
+            &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp; &nbsp;&emsp;  14</h4>
+           <hr>
+           <h4 class="list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3        
+            &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp; &nbsp;&emsp;    Erick    
+            &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp; &nbsp;&emsp;&nbsp;&emsp;  3</h4>
+
+        </div>
+        <div class="container1">
+                <h1 class="mvp"> &nbsp; &nbsp;Goles</h1>
+        <img src="img/gol.jpg" alt="gol">
+        <h3 class="list">&nbsp; Ranking  &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;   Nombre    &nbsp; &nbsp; &emsp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;&nbsp;&nbsp; Asistencia</h3>
+        <hr>
+        <h4 class="list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2        
+         &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp; &nbsp;&emsp;    Godish    
+         &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp; &nbsp;&emsp;  14</h4>
+        <hr>
+        <h4 class="list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3        
+         &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp; &nbsp;&emsp;    Erick    
+         &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp; &nbsp;&emsp;&nbsp;&emsp;  3</h4>
+            
+        </div>
+        
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>gsdfsfs
+       
+    </div>
+</body>
+</html>
