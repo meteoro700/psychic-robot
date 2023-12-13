@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GODISH</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            background-color: #968b7c;
+          
+            margin: 0 ;
+         
+        }
+        @media screen and (min-width: 10000px) {
+            body {
+                width: 1000px;
+                margin: 0 auto;
+            }
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            text-align: center;
+            margin-bottom: 1px;
+            z-index: 1;
+            top: 0;
+            width: 100%;
+       
+        }
+      
+
+        .nav {
+            
+  background-color: #333;
+  position: fixed;
+  top: 80px;
+  overflow: visible;
+  z-index: 2;
+margin: 0px;
+width: 100%;
+  
+        }
+        .nav img {
+float: left;
+margin-left: 5%;        
+  width: 4%;
+  transition: 0.5s ease;
+  transform: scale(1.9);
+  z-index: 3;
+}
+        .nav a {
+             margin-left: 50px;   
+            float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: left;
+  padding: 10px  20px;
+  text-decoration: none;
+        }
+    
+        .nav a:hover {
+  background-color: #fdd10b;
+  color: black;
+}
+
+        .main {
+         margin: 0;
+            margin-top: 130px; 
+        }
+
+
+    </style>
+</head>
+<body>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            document.querySelector(".nav img").style.width = "2%";
+          
+          } else {
+            document.querySelector(".nav img").style.width = "4%";
+ 
+          }
+        }
+    
+            </script>
+    <div class="header">
+        <h1>Los Chicos Del Barrio</h1>
+    </div>
+    <div class="nav">
+        <img src="img/escudo.png" alt="losDelBarrio" >
+        <a href="index.html">Inicio</a>
+        <a href="jugadores.html">Jugadores</a>
+        <a href="clasificacion.html">Clasificacion</a>
+    </div>
+    <div class="main">
+     
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

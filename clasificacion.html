@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GODISH</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            background-color: #ffffff;
+          
+            margin: 0 ;
+         
+        }
+        @media screen and (min-width: 10000px) {
+            body {
+                width: 1000px;
+                margin: 0 auto;
+            }
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            text-align: center;
+            margin-bottom: 1px;
+            z-index: 1;
+            top: 0;
+            width: 100%;
+       
+        }
+      
+
+        .nav {
+            
+  background-color: #333;
+  position: fixed;
+  top: 80px;
+  overflow: visible;
+  z-index: 2;
+margin: 0px;
+width: 100%;
+  
+        }
+        .nav img {
+float: left;
+margin-left: 5%;        
+  width: 4%;
+  transition: 0.5s ease;
+  transform: scale(1.9);
+  z-index: 3;
+}
+        .nav a {
+             margin-left: 50px;   
+            float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: left;
+  padding: 10px  20px;
+  text-decoration: none;
+        }
+    
+        .nav a:hover {
+  background-color: #fdd10b;
+  color: black;
+}
+
+        .main {
+         margin: 0;
+            margin-top: 130px; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            
+            background-color: #000000;
+            color: white;
+            cursor: pointer;
+        }
+        th:hover {
+            background-color: #5e5e5e;  
+        }
+        #dos{
+            border-left: 10px solid rgb(0, 0, 0);  
+        }
+        tr:nth-child(1) { /* Jugador 1 */
+            border-left: 10px solid rgb(0, 0, 0);
+            
+        }
+        tr:nth-child(2) { /* Jugador 1 */
+            border-left: 10px solid rgb(83, 68, 48);
+        }
+        tr:nth-child(3) { /* Jugador 2 */
+            border-left: 10px solid rgb(110, 91, 66);
+        }
+        tr:nth-child(4) { /* Jugador 3 */
+            border-left: 10px solid rgb(134, 114, 91);
+        }
+        tr:nth-child(5) { /* Jugador 4 */
+            border-left: 10px solid rgb(172, 150, 111);
+        }
+        tr:nth-child(6) { /* Jugador 5 */
+            border-left: 10px solid rgb(230, 207, 164);
+        }
+
+#rankingTable1{
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 10px 4px rgba(0, 0, 0, 0.9);
+            margin-top: 5%;
+            margin-left: 3%;
+            margin-bottom: 200px;
+}
+#rankingTable{
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 10px 4px rgba(0, 0, 0, 0.9);
+            margin-bottom: 200px;
+            margin-top: 5%;
+}
+#rankingTable td:nth-child(3) {
+  background-color: rgb(218, 252, 223);
+}
+#rankingTable td:nth-child(5) {
+  background-color: rgb(253, 249, 213);
+}
+#rankingTable td:nth-child(6) {
+  background-color: rgb(255, 223, 223);
+}
+#rankingTable td:nth-child(7) {
+  background-color: rgb(214, 243, 255);
+}
+#rankingTable1 td:nth-child(1) {
+  background-color: rgb(70, 69, 69);
+  color: white;
+}
+   
+    </style>
+</head>
+<body>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            document.querySelector(".nav img").style.width = "2%";
+          
+          } else {
+            document.querySelector(".nav img").style.width = "4%";
+ 
+          }
+        }
+    
+            </script>
+    <div class="header">
+        <h1>RANKING</h1>
+    </div>
+    <div class="nav">
+        <img src="img/escudo.png" alt="losDelBarrio" >
+        <a href="index.html">Inicio</a>
+        <a href="jugadores.html">Jugadores</a>
+        <a href="clasificacion.html">Clasificacion</a>
+    </div>
+    <div class="main">
+
+        <div class="table">  
+            <table id="rankingTable1" style="float: left; width: 1%;">
+                <tr>
+                    <th>N.</th>
+                </tr>
+                <tr id="dos"><td>1</td></tr>
+                <tr id="dos"><td>2</td></tr>
+                <tr id="dos"><td>3</td></tr>
+                <tr id="dos"><td>4</td></tr>
+                <tr id="dos"><td>5</td></tr>
+                <tr id="dos"><td>6</td></tr>
+                <tr id="dos"><td>7</td></tr>
+                <tr id="dos"><td>8</td></tr>
+                <tr id="dos"><td>9</td></tr>
+                <tr id="dos"><td>10</td></tr>
+                <tr id="dos"><td>11</td></tr>
+                <tr id="dos"><td>12</td></tr>
+                <tr id="dos"><td>13</td></tr>
+                <tr id="dos"><td>14</td></tr>
+                <tr id="dos"><td>15</td></tr>
+                <tr id="dos"><td>16</td></tr>
+            </table>
+        <table id="rankingTable" style="float: left; width: 89%;">
+            <colgroup>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+            <tr>
+                <th onclick="sortTable(0)">Jugador</th>
+                <th onclick="sortTable(1)">Partidos</th>
+                <th onclick="sortTable(2)">Goles</th>
+                <th onclick="sortTable(3)">Asistencias</th>
+                <th onclick="sortTable(4)">T.Amarillas</th>
+                <th onclick="sortTable(5)">T.Rojas</th>
+                <th onclick="sortTable(6)">MVP</th>
+            </tr>
+            <tr>
+                <td>Alex Tarraga</td>
+                <td>1</td><td >10</td><td>3</td><td>1</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Jorge Guerrero</td>
+                <td>1</td><td>10</td><td>3</td><td>23</td><td>60</td><td>0</td> 
+            </tr>
+            <tr>
+                <td>Leonel Vallejos </td>
+                <td>1</td><td>17</td><td>12</td><td>98</td><td>7</td><td>5</td>
+            </tr>
+            <tr>
+                <td>Rodrigo Condori</td>
+                <td>1</td><td>100</td><td>3</td><td>111</td><td>7</td><td>0</td> 
+            </tr>
+            <tr>
+                <td>Lucas Vallejos </td>
+                <td>1</td><td>10</td><td>3</td><td>14</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Cristian Basquet</td>
+                <td>1</td><td>1</td><td>3</td><td>1</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Cristian Salazar</td>
+                <td>1</td><td>2</td><td>3</td><td>1</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Gustavo Garzon </td>
+                <td>1</td><td>1</td><td>3</td><td>1</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Irrael Blazques </td>
+                <td>1</td><td>4</td><td>3</td><td>1</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Abraham Blazques </td>
+                <td>1</td><td>6</td><td>3</td><td>1</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Matias Ochoa </td>
+                <td>1</td><td>110</td><td>3</td><td>1</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Jose Nogales</td>
+                <td>1</td><td>0</td><td>3</td><td>1</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Dante Acosta</td>
+                <td>1</td><td>10</td><td>3</td><td>1</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Oky </td>
+                <td>1</td><td>220</td><td>3</td><td>1</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Fabricio Pancho</td>
+                <td>1</td><td>10</td><td>3</td><td>1</td><td>17</td><td>0</td>
+            </tr>
+            <tr>
+                <td>Brayan Padilla</td>
+                <td>1</td><td>10</td><td>3</td><td>1</td><td>777</td><td>0</td>
+            </tr>
+            <!-- Agrega más filas según sea necesario -->
+        </table>
+     </div>
+     
+        <script>
+            // Obtén todos los td de la columna de "Goles"
+var tds = document.querySelectorAll("#rankingTable tr td:nth-child(3)");
+// Crea un array con los valores de los td
+var values = Array.from(tds).map(function(td) {
+  return parseFloat(td.textContent);
+});
+// Ordena los valores y selecciona los 3 más altos
+values.sort(function(a, b) {
+  return b - a;
+});
+var top3 = values.slice(0, 3);
+// Pinta los td con los valores más altos
+Array.from(tds).forEach(function(td) {
+  var value = parseFloat(td.textContent);
+  if (top3.includes(value)) {
+    td.style.backgroundColor = "rgb(114, 250, 134)";  
+  }
+});
+// AMARILLAS
+var td5 = document.querySelectorAll("#rankingTable tr td:nth-child(5)");
+var values5 = Array.from(td5).map(function(td) {
+  return parseFloat(td.textContent);
+});
+values5.sort(function(a, b) {
+  return b - a;
+});
+var top3 = values5.slice(0, 3);
+Array.from(td5).forEach(function(td) {
+  var value = parseFloat(td.textContent);
+  if (top3.includes(value)) {
+    td.style.backgroundColor = "rgb(255, 237, 76)"; 
+  }
+});
+// ROJO
+var td6 = document.querySelectorAll("#rankingTable tr td:nth-child(6)");
+var values6 = Array.from(td6).map(function(td) {
+  return parseFloat(td.textContent);
+});
+values6.sort(function(a, b) {
+  return b - a;
+});
+var top3 = values6.slice(0, 3);
+Array.from(td6).forEach(function(td) {
+  var value = parseFloat(td.textContent);
+  if (top3.includes(value)) {
+    td.style.backgroundColor = "rgb(252, 105, 105)"; 
+  }
+});
+
+
+            function sortTable(n) {
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementById("rankingTable");
+                switching = true;
+                dir = "asc"; 
+                while (switching) {
+                    switching = false;
+                    rows = table.rows;
+                    for (i = 1; i < (rows.length - 1); i++) {
+                        shouldSwitch = false;
+                        x = rows[i].getElementsByTagName("TD")[n];
+                        y = rows[i + 1].getElementsByTagName("TD")[n];
+                        if (dir == "asc") {
+                            if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                                shouldSwitch = true;
+                                break;
+                            }
+                        } else if (dir == "desc") {
+                            if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                        switchcount ++;      
+                    } else {
+                        if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+                
+            }
+            
+        </script>
+
+
+
+
+
+
+    </div>
+    
+</body>
+</html>
