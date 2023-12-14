@@ -1,0 +1,105 @@
+Copy<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruleta de Jugadores</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    .ruleta {
+      margin: 20px auto;
+      max-width: 400px;
+      position: relative;
+    }
+    
+    .jugador {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 300px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .jugador.mostrando {
+      display: block;
+    }
+    
+    .boton-prev,
+    .boton-next {
+      display: inline-block;
+      margin: 10px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    .boton-prev:hover,
+    .boton-next:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ruleta de Jugadores</h1>
+  
+  <div class="ruleta">
+    <div id="jugador1" class="jugador mostrando">
+      <h2>Jugador 1</h2>
+      <p>Información del Jugador 1.</p>
+    </div>
+    <div id="jugador2" class="jugador">
+      <h2>Jugador 2</h2>
+      <p>Información del Jugador 2.</p>
+    </div>
+    <div id="jugador3" class="jugador">
+      <h2>Jugador 3</h2>
+      <p>Información del Jugador 3.</p>
+    </div>
+    <div id="jugador4" class="jugador">
+      <h2>Jugador 4</h2>
+      <p>Información del Jugador 4.</p>
+    </div>
+    <div id="jugador5" class="jugador">
+      <h2>Jugador 5</h2>
+      <p>Información del Jugador 5.</p>
+    </div>
+  </div>
+  
+  <div class="navegacion">
+    <a class="boton-prev" onclick="cambiarJugador(-1)">Prev</a>
+    <a class="boton-next" onclick="cambiarJugador(1)">Next</a>
+  </div>
+
+  <script>
+    var jugadores = document.querySelectorAll('.jugador');
+    var indexActual = 0;
+    
+    function cambiarJugador(n) {
+      jugadores[indexActual].classList.remove('mostrando');
+      indexActual += n;
+      
+      if (indexActual < 0) {
+        indexActual = jugadores.length - 1;
+      }
+      
+      if (indexActual >= jugadores.length) {
+        indexActual = 0;
+      }
+      
+      jugadores[indexActual].classList.add('mostrando');
+    }
+  </script>
+</body>
+</html>

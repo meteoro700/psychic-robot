@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GODISH</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 0;
-            background-color: #968b7c;
-          
-            margin: 0 ;
-         
+        body { 
+            display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  font-family: Arial, sans-serif;
         }
         @media screen and (min-width: 10000px) {
             body {
@@ -71,7 +72,49 @@ margin-left: 5%;
             margin-top: 130px; 
         }
 
+        .slider {
+      
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  width: 86%; /* Ajusta este valor según el tamaño de tus jugadores */
+}
 
+.player {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  width: 90px;
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow {
+  cursor: pointer;
+  padding: 20px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 20px;
+  user-select: none;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+ 
+}
+
+.stats {
+    display: none;
+  text-align: center;
+  margin: 20% 0 0 0; /* Ajusta este valor según cuánto quieras mover las estadísticas hacia abajo */
+  
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  width: auto; /* Ajusta este valor según el tamaño de tus estadísticas */
+  position: absolute; /* Posiciona el div de manera absoluta */
+  left: 40%; /* Alinea el div a la izquierda */
+}
     </style>
 </head>
 <body>
@@ -87,7 +130,102 @@ margin-left: 5%;
  
           }
         }
-    
+        window.onload = function() {
+  var slider = document.getElementById('slider');
+  var players = Array.from(slider.getElementsByClassName('player'));
+  var stats = Array.from(document.getElementsByClassName('stats'));
+  var index = 0;
+
+  function updateStats() {
+    stats.forEach(function(stat, i) {
+      stat.style.display = i === index ? 'block' : 'none';
+    });
+  }
+
+  document.getElementById('prev').onclick = function() {
+    // Oculta todos los jugadores
+    players.forEach(function(player) {
+      player.style.display = 'none';
+    });
+  
+    // Actualiza el índice al jugador anterior
+    index = (index - 1 + players.length) % players.length;
+  
+    // Muestra todos los jugadores a partir del jugador en la posición del índice
+    for (var i = 0; i < 5; i++) {
+      players[(index + i) % players.length].style.display = 'block';
+    }
+  
+    // Actualiza las estadísticas
+    updateStats();
+  };
+
+  document.getElementById('next').onclick = function() {
+    // Oculta todos los jugadores
+    players.forEach(function(player) {
+      player.style.display = 'none';
+    });
+  
+    // Actualiza el índice al próximo jugador
+    index = (index + 1) % players.length;
+  
+    // Muestra todos los jugadores a partir del jugador en la posición del índice
+    for (var i = 0; i < 5; i++) {
+      players[(index + i) % players.length].style.display = 'block';
+    }
+  
+    // Actualiza las estadísticas
+    updateStats();
+  };
+
+  // Muestra los primeros cinco jugadores al cargar la página
+  for (var i = 0; i < 5; i++) {
+    players[i].style.display = 'block';
+  }
+  updateStats();
+};
+
+
+
+window.onload = function() {
+  var slider = document.getElementById('slider');
+  var players = Array.from(slider.getElementsByClassName('player'));
+  var stats = Array.from(document.getElementsByClassName('stats'));
+  var index = 0;
+
+  function updateStats() {
+    stats.forEach(function(stat, i) {
+      stat.style.display = i === (index + 2) % players.length ? 'block' : 'none';
+    });
+  }
+
+  document.getElementById('prev').onclick = function() {
+    players[(index + 4) % players.length].style.display = 'none';
+    index = (index - 1 + players.length) % players.length;
+    players[index].style.display = 'block';
+    players[(index + 1) % players.length].style.display = 'block';
+    players[(index + 2) % players.length].style.display = 'block';
+    players[(index + 3) % players.length].style.display = 'block';
+    players[(index + 4) % players.length].style.display = 'block';
+    updateStats();
+  };
+
+  document.getElementById('next').onclick = function() {
+    players[index].style.display = 'none';
+    index = (index + 1) % players.length;
+    players[index].style.display = 'block';
+    players[(index + 1) % players.length].style.display = 'block';
+    players[(index + 2) % players.length].style.display = 'block';
+    players[(index + 3) % players.length].style.display = 'block';
+    players[(index + 4) % players.length].style.display = 'block';
+    updateStats();
+  };
+
+  for (var i = 0; i < 5; i++) {
+    players[i].style.display = 'block';
+  }
+  updateStats();
+};
             </script>
     <div class="header">
         <h1>Los Chicos Del Barrio</h1>
@@ -100,7 +238,30 @@ margin-left: 5%;
     </div>
     <div class="main">
      
-
+        <div id="prev" class="arrow" style="float: left;">←</div>
+        <div id="slider" class="slider">
+          <div class="player">Jugador 1</div>
+          <div class="player">Jugador 2</div>
+          <div class="player">Jugador 3</div>
+          <div class="player">Jugador 4</div>
+          <div class="player">Jugador 5</div>
+          <div class="player" style="display: none;">Jugador 6</div>
+          <div class="player" style="display: none;">Jugador 7</div>
+          <div class="player" style="display: none;">Jugador 8</div>
+          <div class="player" style="display: none;">Jugador 9</div>
+          <div class="player" style="display: none;">Jugador 10</div>
+        </div>
+        <div id="next" class="arrow" style="float: right;">→</div>
+        <div class="stats">Estadísticas del Jugador 1</div>
+        <div class="stats">Estadísticas del Jugador 2</div>
+        <div class="stats">Estadísticas del Jugador 3</div>
+        <div class="stats">Estadísticas del Jugador 4</div>
+        <div class="stats">Estadísticas del Jugador 5</div>
+        <div class="stats">Estadísticas del Jugador 6</div>
+        <div class="stats">Estadísticas del Jugador 7</div>
+        <div class="stats">Estadísticas del Jugador 8</div>
+        <div class="stats">Estadísticas del Jugador 9</div>
+        <div class="stats">Estadísticas del Jugador 10</div>
 
 
 

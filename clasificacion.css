@@ -1,0 +1,275 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    background-color: #f0f0f0;
+    margin: 0 ;
+
+}
+        /**celular**/
+@media (max-width: 767px) {
+    .tituloHeader{
+        font-size: 31px;
+        font-weight: bold;
+    }
+    .header {
+        background-color: #333;
+        color: #fff;
+        position: fixed;
+        text-align: center;
+        margin-bottom: 1px;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+    
+    }
+    
+    
+    .nav {
+        background-color: #292727;
+        position: fixed;
+        top: 90px;
+        overflow: visible;
+        z-index: 2;
+        margin: 0px;
+        width: 100%;
+    
+    }
+    .nav img {
+    
+    float: left;
+    margin-left: 6%;        
+    width: 7%;
+    transition: 0.5s ease;
+    transform: scale(1.9);
+    z-index: 3;
+    }
+    .nav a {
+        margin-left: 10px;   
+        float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 10px  6px;
+    text-decoration: none;
+    }
+    
+    .nav a:hover {
+    background-color: #fdd10b;
+    color: black;
+    }
+    
+    .main {
+     margin: 0;
+        margin-top: 80px; 
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        
+    }
+    th, td {
+        height: 20px;
+        padding: 2px;
+        font-size: 9px;
+        text-align: left;
+        border-bottom: 1px solid #000000;
+    }
+    th {
+        font-size: 7px;
+        background-color: #000000;
+        color: white;
+        cursor: pointer;
+    }
+    th:hover {
+        background-color: #5e5e5e;  
+    }
+    #dos{
+        border-left: 10px solid rgb(0, 0, 0);  
+    }
+    tr:nth-child(1) { /* Jugador 1 */
+        border-left: 10px solid rgb(0, 0, 0);
+        
+    }
+    tr:nth-child(2) { /* Jugador 1 */
+        border-left: 10px solid rgb(83, 68, 48);
+    }
+    tr:nth-child(3) { /* Jugador 2 */
+        border-left: 10px solid rgb(110, 91, 66);
+    }
+    tr:nth-child(4) { /* Jugador 3 */
+        border-left: 10px solid rgb(134, 114, 91);
+    }
+    tr:nth-child(5) { /* Jugador 4 */
+        border-left: 10px solid rgb(172, 150, 111);
+    }
+    tr:nth-child(6) { /* Jugador 5 */
+        border-left: 10px solid rgb(230, 207, 164);
+    }
+    
+    #rankingTable1{
+        background-color: #FFFFFF;
+        border-radius: 10px;
+       
+        margin-top: 20%;
+        margin-bottom: 100px;
+
+    }
+    #rankingTable{
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        margin-bottom: 100px;
+        margin-top: 20%;
+
+    }
+    #rankingTable td:nth-child(3) {
+    background-color: rgb(218, 252, 223);
+    }
+    #rankingTable td:nth-child(5) {
+    background-color: rgb(253, 249, 213);
+    }
+    #rankingTable td:nth-child(6) {
+    background-color: rgb(255, 223, 223);
+    }
+    #rankingTable td:nth-child(7) {
+    background-color: rgb(214, 243, 255);
+    }
+    #rankingTable1 td:nth-child(1) {
+    background-color: rgb(70, 69, 69);
+    color: white;
+    }
+    }
+    /**PC**/
+@media (min-width: 991px){
+    .header {
+        background-color: #333;
+        color: #fff;
+        position: fixed;
+        text-align: center;
+        margin-bottom: 1px;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+    
+    }
+    
+    
+    .nav {
+        
+    background-color: #333;
+    position: fixed;
+    top: 80px;
+    overflow: visible;
+    z-index: 2;
+    margin: 0px;
+    width: 100%;
+    
+    }
+    .nav img {
+    float: left;
+    margin-left: 5%;        
+    width: 4%;
+    transition: 0.5s ease;
+    transform: scale(1.9);
+    z-index: 3;
+    }
+    .nav a {
+         margin-left: 50px;   
+        float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 10px  20px;
+    text-decoration: none;
+    }
+    
+    .nav a:hover {
+    background-color: #fdd10b;
+    color: black;
+    }
+    
+    .main {
+     margin: 0;
+        margin-top: 130px; 
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        
+    }
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        
+        background-color: #000000;
+        color: white;
+        cursor: pointer;
+    }
+    th:hover {
+        background-color: #5e5e5e;  
+    }
+    #dos{
+        border-left: 10px solid rgb(0, 0, 0);  
+    }
+    tr:nth-child(1) { /* Jugador 1 */
+        border-left: 10px solid rgb(0, 0, 0);
+        
+    }
+    tr:nth-child(2) { /* Jugador 1 */
+        border-left: 10px solid rgb(83, 68, 48);
+    }
+    tr:nth-child(3) { /* Jugador 2 */
+        border-left: 10px solid rgb(110, 91, 66);
+    }
+    tr:nth-child(4) { /* Jugador 3 */
+        border-left: 10px solid rgb(134, 114, 91);
+    }
+    tr:nth-child(5) { /* Jugador 4 */
+        border-left: 10px solid rgb(172, 150, 111);
+    }
+    tr:nth-child(6) { /* Jugador 5 */
+        border-left: 10px solid rgb(230, 207, 164);
+    }
+    
+    #rankingTable1{
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 10px 4px rgba(0, 0, 0, 0.9);
+        margin-top: 5%;
+        margin-left: 3%;
+        margin-bottom: 200px;
+    }
+    #rankingTable{
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 10px 4px rgba(0, 0, 0, 0.9);
+        margin-bottom: 200px;
+        margin-top: 5%;
+    }
+    #rankingTable td:nth-child(3) {
+    background-color: rgb(218, 252, 223);
+    }
+    #rankingTable td:nth-child(5) {
+    background-color: rgb(253, 249, 213);
+    }
+    #rankingTable td:nth-child(6) {
+    background-color: rgb(255, 223, 223);
+    }
+    #rankingTable td:nth-child(7) {
+    background-color: rgb(214, 243, 255);
+    }
+    #rankingTable1 td:nth-child(1) {
+    background-color: rgb(70, 69, 69);
+    color: white;
+    }
+    
+}
+
+
+
