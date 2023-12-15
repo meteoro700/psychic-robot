@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #292727;
     margin: 0 ;
 
 }
@@ -139,9 +139,21 @@ body {
     background-color: rgb(70, 69, 69);
     color: white;
     }
+    #rankingTable1{
+        width: 1%; 
+        float: left;
+    } 
+    #rankingTable{
+        width: 93%;
+         float: left;
+    }
     }
     /**PC**/
 @media (min-width: 991px){
+    .tituloHeader{
+        font-size: 40px;
+        font-weight: bold;
+    }
     .header {
         background-color: #333;
         color: #fff;
@@ -149,7 +161,7 @@ body {
         text-align: center;
         margin-bottom: 1px;
         z-index: 1;
-        top: 0;
+        top: -20px;
         width: 100%;
     
     }
@@ -269,6 +281,15 @@ body {
     color: white;
     }
     
+    #rankingTable1{
+        width: 1%; 
+        float: left;
+        margin-left: 20px;
+    } 
+    #rankingTable{
+        width: 91%;
+         float: left;
+    }
 }
 
 

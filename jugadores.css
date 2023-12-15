@@ -1,0 +1,251 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+  
+    margin: 0 ;
+}
+
+/**celular**/
+ @media (max-width: 767px) {
+    .tituloHeader{
+        font-size: 31px;
+        font-weight: bold;
+    }
+    .header {
+        background-color: #333;
+        color: #fff;
+        position: fixed;
+        text-align: center;
+        margin-bottom: 1px;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+    
+    }
+    
+    
+    .nav {
+        
+        background-color: #292727;
+        position: fixed;
+        top: 90px;
+        overflow: visible;
+        z-index: 2;
+        margin: 0px;
+        width: 100%;
+    
+    }
+    .nav img {
+        float: left;
+        margin-left: 6%;        
+        width: 7%;
+        transition: 0.5s ease;
+        transform: scale(1.9);
+        z-index: 3;
+    }
+    .nav a {
+        margin-left: 10px;   
+        float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 10px  6px;
+    text-decoration: none;
+    }
+    
+    .nav a:hover {
+    background-color: #fdd10b;
+    color: black;
+    }
+    
+    .main {
+     margin: 0;
+        margin-top: 80px; 
+        width: 90%;
+        margin-left: 1%;
+        z-index: 10;
+    }
+    
+    #jugadores {
+        overflow-x: scroll;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    .jugador {
+        flex: 0 0 auto;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 0 10px;
+        cursor: pointer;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        margin-top: 15%;
+    }
+    
+    .jugador:hover {
+        box-shadow: 0 2px 20px rgb(255, 255, 255);
+    }
+    
+    .stats {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: none; /* Añade esta línea */
+    }
+    
+    #flechaIzquierda, #flechaDerecha {
+        display: none;
+    }
+    
+    #flechaIzquierda {
+        left: 10px;
+    }
+    
+    #flechaDerecha {
+        right: 10px;
+    }
+    
+    #flechaIzquierda:hover, #flechaDerecha:hover {
+        background-color: #0056b3;
+    }
+    
+    #busqueda{
+        width: 50%; 
+        margin-top: 25%;
+        padding: 10px;
+    }
+ }
+
+    /**PC**/
+    @media (min-width: 991px){
+        .tituloHeader{
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            text-align: center;
+            margin-bottom: 1px;
+            z-index: 1;
+            top: -20px;
+            width: 100%;
+        
+        }
+        
+        
+        .nav {
+            
+        background-color: #333;
+        position: fixed;
+        top: 80px;
+        overflow: visible;
+        z-index: 2;
+        margin: 0px;
+        width: 100%;
+        
+        }
+        .nav img {
+        float: left;
+        margin-left: 5%;        
+        width: 4%;
+        transition: 0.5s ease;
+        transform: scale(1.9);
+        z-index: 3;
+        }
+        .nav a {
+             margin-left: 50px;   
+            float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: left;
+        padding: 10px  20px;
+        text-decoration: none;
+        }
+        
+        .nav a:hover {
+        background-color: #fdd10b;
+        color: black;
+        }
+        
+        .main {
+         margin: 0;
+            margin-top: 130px; 
+            width: 90%;
+            margin-left: 5%;
+            z-index: 10;
+        }
+        
+        #jugadores {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .jugador {
+            flex: 1;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 0 10px;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            margin-top: 6%;
+        }
+        
+        .jugador:hover {
+            box-shadow: 0 2px 20px rgb(255, 255, 255);
+        }
+        
+        .stats {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: none; /* Añade esta línea */
+        }
+        
+        #flechaIzquierda, #flechaDerecha {
+            position: fixed;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        #flechaIzquierda {
+            left: 10px;
+        }
+        
+        #flechaDerecha {
+            right: 10px;
+        }
+        
+        #flechaIzquierda:hover, #flechaDerecha:hover {
+            background-color: #0056b3;
+        }
+        
+        #busqueda{
+            width: 50%; 
+            margin-top: 3%;
+            padding: 10px;
+        }  
+    }

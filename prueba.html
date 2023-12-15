@@ -1,105 +1,165 @@
-Copy<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Ruleta de Jugadores</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    
-    .ruleta {
-      margin: 20px auto;
-      max-width: 400px;
-      position: relative;
-    }
-    
-    .jugador {
-      display: none;
-      position: absolute;
-      top: 30px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      width: 300px;
-      padding: 10px;
-      background-color: #f5f5f5;
-      border-radius: 5px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      transition: opacity 0.3s ease-in-out;
-    }
-    
-    .jugador.mostrando {
-      display: block;
-    }
-    
-    .boton-prev,
-    .boton-next {
-      display: inline-block;
-      margin: 10px;
-      padding: 5px 10px;
-      background-color: #007bff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    
-    .boton-prev:hover,
-    .boton-next:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+#jugadores {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.jugador {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.jugador:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stats {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: none; /* Añade esta línea */
+}
+
+#flechaIzquierda, #flechaDerecha {
+    position: fixed;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#flechaIzquierda {
+    left: 10px;
+}
+
+#flechaDerecha {
+    right: 10px;
+}
+
+#flechaIzquierda:hover, #flechaDerecha:hover {
+    background-color: #0056b3;
+}
+
+    </style>
 </head>
 <body>
-  <h1>Ruleta de Jugadores</h1>
-  
-  <div class="ruleta">
-    <div id="jugador1" class="jugador mostrando">
-      <h2>Jugador 1</h2>
-      <p>Información del Jugador 1.</p>
-    </div>
-    <div id="jugador2" class="jugador">
-      <h2>Jugador 2</h2>
-      <p>Información del Jugador 2.</p>
-    </div>
-    <div id="jugador3" class="jugador">
-      <h2>Jugador 3</h2>
-      <p>Información del Jugador 3.</p>
-    </div>
-    <div id="jugador4" class="jugador">
-      <h2>Jugador 4</h2>
-      <p>Información del Jugador 4.</p>
-    </div>
-    <div id="jugador5" class="jugador">
-      <h2>Jugador 5</h2>
-      <p>Información del Jugador 5.</p>
-    </div>
-  </div>
-  
-  <div class="navegacion">
-    <a class="boton-prev" onclick="cambiarJugador(-1)">Prev</a>
-    <a class="boton-next" onclick="cambiarJugador(1)">Next</a>
-  </div>
+  <body>
+    <input type="text" id="busqueda" placeholder="Buscar jugador...">
+    <div id="flechaIzquierda">←</div>
+    <div id="jugadores"></div>
+    <div id="flechaDerecha">→</div>
+    <div class="stats">Estadísticas del Jugador 1 caca</div>
+    <div class="stats">Estadísticas del Jugador 2</div>
+    <div class="stats">Estadísticas del Jugador 3</div>
+    <div class="stats">Estadísticas del Jugador 4</div>
+    <div class="stats">Estadísticas del Jugador 5</div>
+    <div class="stats">Estadísticas del Jugador 6</div>
+    <div class="stats">Estadísticas del Jugador 7</div>
+    <div class="stats">Estadísticas del Jugador 8</div>
+    <div class="stats">Estadísticas del Jugador 9 cabunca con 290 goles</div>
+    <div class="stats">Estadísticas del Jugador 10 el mejor 11</div>
 
-  <script>
-    var jugadores = document.querySelectorAll('.jugador');
-    var indexActual = 0;
+    <script>
+        var jugadoresOriginales = [];
+        var jugadores = [];
+        var indiceActual = 0;
+        for (var i = 1; i <= 10; i++) {
+            jugadoresOriginales.push({ indice: i - 1, nombre: 'Jugador ' + i });
+        }
+        jugadores = jugadoresOriginales.slice();
     
-    function cambiarJugador(n) {
-      jugadores[indexActual].classList.remove('mostrando');
-      indexActual += n;
-      
-      if (indexActual < 0) {
-        indexActual = jugadores.length - 1;
-      }
-      
-      if (indexActual >= jugadores.length) {
-        indexActual = 0;
-      }
-      
-      jugadores[indexActual].classList.add('mostrando');
-    }
-  </script>
+        var contenedorJugadores = document.getElementById('jugadores');
+        var contenedorEstadisticas = document.getElementsByClassName('stats');
+        var campoBusqueda = document.getElementById('busqueda');
+        var flechaIzquierda = document.getElementById('flechaIzquierda');
+        var flechaDerecha = document.getElementById('flechaDerecha');
+    
+        function mostrarJugadores() {
+            contenedorJugadores.innerHTML = '';
+            jugadores.slice(indiceActual, indiceActual + 5).forEach(function(jugador) {
+                var div = document.createElement('div');
+                div.className = 'jugador';
+    
+                // Crear un elemento de imagen
+                var img = document.createElement('img');
+                img.src ='img/messi'+(jugador.indice + 1)+'.png';  // Genera dinámicamente la ruta a la imagen del jugador
+                img.alt = jugador.nombre;
+    
+                // Agregar la imagen al div del jugador
+                div.appendChild(img);
+    
+                // Agregar el nombre del jugador al div del jugador
+                var nombre = document.createTextNode(jugador.nombre);
+                div.appendChild(nombre);
+    
+                div.addEventListener('click', function() {
+                    for (var i = 0; i < contenedorEstadisticas.length; i++) {
+                        contenedorEstadisticas[i].style.display = i === jugador.indice ? 'block' : 'none';
+                    }
+                });
+                contenedorJugadores.appendChild(div);
+            });
+        }
+    
+        campoBusqueda.addEventListener('input', function() {
+            var busqueda = campoBusqueda.value.toLowerCase();
+            if (busqueda) {
+                jugadores = jugadoresOriginales.filter(function(jugador) {
+                    return jugador.nombre.toLowerCase().includes(busqueda);
+                });
+            } else {
+                jugadores = jugadoresOriginales.slice();
+            }
+            indiceActual = 0;
+            mostrarJugadores();
+        });
+    
+        flechaIzquierda.addEventListener('click', function() {
+            if (indiceActual > 0) {
+                indiceActual--;
+                mostrarJugadores();
+            }
+        });
+    
+        flechaDerecha.addEventListener('click', function() {
+            if (indiceActual < jugadores.length - 5) {
+                indiceActual++;
+                mostrarJugadores();
+            }
+        });
+    
+        mostrarJugadores();
+    </script>
+    
+</body>
+
+</body>
+
 </body>
 </html>

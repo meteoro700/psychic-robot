@@ -3,271 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jugadores.css">
     <title>GODISH</title>
-    <style>
-        body { 
-            display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-  margin: 0;
-  font-family: Arial, sans-serif;
-        }
-        @media screen and (min-width: 10000px) {
-            body {
-                width: 1000px;
-                margin: 0 auto;
-            }
-        }
-        .header {
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            text-align: center;
-            margin-bottom: 1px;
-            z-index: 1;
-            top: 0;
-            width: 100%;
-       
-        }
-      
-
-        .nav {
-            
-  background-color: #333;
-  position: fixed;
-  top: 80px;
-  overflow: visible;
-  z-index: 2;
-margin: 0px;
-width: 100%;
-  
-        }
-        .nav img {
-float: left;
-margin-left: 5%;        
-  width: 4%;
-  transition: 0.5s ease;
-  transform: scale(1.9);
-  z-index: 3;
-}
-        .nav a {
-             margin-left: 50px;   
-            float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: left;
-  padding: 10px  20px;
-  text-decoration: none;
-        }
-    
-        .nav a:hover {
-  background-color: #fdd10b;
-  color: black;
-}
-
-        .main {
-         margin: 0;
-            margin-top: 130px; 
-        }
-
-        .slider {
-      
-  display: flex;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  width: 86%; /* Ajusta este valor según el tamaño de tus jugadores */
-}
-
-.player {
-  flex: 0 0 auto;
-  margin-right: 10px;
-  width: 90px;
-  text-align: center;
-  padding: 20px;
-  background-color: white;
-  transition: transform 0.3s ease-in-out;
-}
-
-.arrow {
-  cursor: pointer;
-  padding: 20px;
-  background-color: white;
-  border-radius: 50%;
-  margin: 0 20px;
-  user-select: none;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
- 
-}
-
-.stats {
-    display: none;
-  text-align: center;
-  margin: 20% 0 0 0; /* Ajusta este valor según cuánto quieras mover las estadísticas hacia abajo */
-  
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  width: auto; /* Ajusta este valor según el tamaño de tus estadísticas */
-  position: absolute; /* Posiciona el div de manera absoluta */
-  left: 40%; /* Alinea el div a la izquierda */
-}
-    </style>
 </head>
 <body>
-    <script>
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-            document.querySelector(".nav img").style.width = "2%";
-          
-          } else {
-            document.querySelector(".nav img").style.width = "4%";
+  <script>
+    window.onscroll = function() {
+if (window.innerWidth <= 991) {
+scrollFunctionMobile();
+} else {
+scrollFunctionPC();
+}
+};
+
+function scrollFunctionMobile() {
+if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+document.querySelector(".nav img").style.width = "6%";
+} else {
+document.querySelector(".nav img").style.width = "9%";
+}
+}
+
+function scrollFunctionPC() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+document.querySelector(".nav img").style.width = "3%";
+} else {
+document.querySelector(".nav img").style.width = "4%";
+}
+}
+       </script>
+<div class="header">
+   <p class="tituloHeader">JUGADORES</p>
+</div>
+<div class="nav">
+   <img src="img/escudo.png" alt="losDelBarrio" >
+   <a href="index.html">Inicio</a>
+   <a href="jugadores.html">Jugadores</a>
+   <a href="clasificacion.html">Clasificacion</a>
+</div>
+<div class="main">
+<center>
+  <input type="text" id="busqueda" placeholder="Buscar jugador..." ></center>
+  <div id="flechaIzquierda">←</div>
+  <div id="jugadores"></div>
+  <div id="flechaDerecha">→</div>
+  <div class="stats">Estadísticas del Jugador 1 caca
+    <img src="img/messi1.png" alt="leo">
+  </div>
+  <div class="stats">Estadísticas del Jugador 2</div>
+  <div class="stats">Estadísticas del Jugador 3</div>
+  <div class="stats">Estadísticas del Jugador 4</div>
+  <div class="stats">Estadísticas del Jugador 5</div>
+  <div class="stats">Estadísticas del Jugador 6</div>
+  <div class="stats">Estadísticas del Jugador 7</div>
+  <div class="stats">Estadísticas del Jugador 8</div>
+  <div class="stats">Estadísticas del Jugador 9 cabunca con 290 goles</div>
+  <div class="stats">Estadísticas del Jugador 10 el mejor 11</div>
+
+  <script>
+
+    var jugadoresOriginales = [];
+    var jugadores = [];
+    var indiceActual = 0;
+    var nombres = ['Matias Ochoa', 'Cristian Basquet', 'Abraham Blazques', 'Leonel Vallejos', 'Alex Tarraga', 'Rodrigo Condori', 'Gustavo Garzon', 'Irrael Blazques', 'Dante Acosta', 'Brayan Padilla'];
+  
+    for (var i = 1; i <= 10; i++) {
+      jugadoresOriginales.push({ indice: i - 1, nombre: nombres[i - 1] });
+    }
+    jugadores = jugadoresOriginales.slice();
+  
+    var contenedorJugadores = document.getElementById('jugadores');
+    var contenedorEstadisticas = document.getElementsByClassName('stats');
+    var campoBusqueda = document.getElementById('busqueda');
+    var flechaIzquierda = document.getElementById('flechaIzquierda');
+    var flechaDerecha = document.getElementById('flechaDerecha');
+   
+   
+    if (window.matchMedia("(max-width: 767px)").matches) {
+        function mostrarJugadores() {
+  contenedorJugadores.innerHTML = '';
+  jugadores.forEach(function(jugador) {
+    var div = document.createElement('div');
+    div.className = 'jugador';
+    div.style.border = 'none';  // Elimina el borde del div del jugador
+
+    // Crear un elemento de imagen
+    var img = document.createElement('img');
+    img.src ='img/messi'+(jugador.indice + 1)+'.png';  // Genera dinámicamente la ruta a la imagen del jugador
+    img.alt = jugador.nombre;
+    img.style.border = 'none';  // Elimina el borde de la imagen
+
+    // Agregar la imagen al div del jugador
+    div.appendChild(img);
+
+    // Crear un elemento de texto para el nombre del jugador
+    var nombre = document.createElement('p');
+    nombre.textContent = jugador.nombre;
+    nombre.style.border = 'none';  // Elimina el borde del nombre
+    nombre.style.borderRadius = '10px';  // Agrega bordes redondeados
+    nombre.style.padding = '10px';  // Agrega padding
+    nombre.style.backgroundColor = '#f2f2f2';  // Cambia el color de fondo
+    nombre.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';  // Agrega sombra
+    div.appendChild(nombre);
+
+    div.addEventListener('click', function() {
+      for (var i = 0; i < contenedorEstadisticas.length; i++) {
+        contenedorEstadisticas[i].style.display = i === jugador.indice ? 'block' : 'none';
+      }
+    });
+    contenedorJugadores.appendChild(div);
+  }); 
+}
+
+campoBusqueda.addEventListener('input', function() {
+  var busqueda = campoBusqueda.value.toLowerCase();
+  if (busqueda) {
+    jugadores = jugadoresOriginales.filter(function(jugador) {
+      return jugador.nombre.toLowerCase().includes(busqueda);
+    });
+  } else {
+    jugadores = jugadoresOriginales.slice();
+  }
+  mostrarJugadores();
+});
+
+flechaIzquierda.addEventListener('click', function() {
+  if (indiceActual > 0) {
+    indiceActual--;
+    mostrarJugadores();
+  }
+});
+
+flechaDerecha.addEventListener('click', function() {
+  if (indiceActual < jugadores.length - 5) {
+    indiceActual++;
+    mostrarJugadores();
+  }
+});
+
+mostrarJugadores();
  
+} else {
+    function mostrarJugadores() {
+      contenedorJugadores.innerHTML = '';
+      jugadores.slice(indiceActual, indiceActual + 5).forEach(function(jugador) {
+        var div = document.createElement('div');
+        div.className = 'jugador';
+        div.style.border = 'none';  // Elimina el borde del div del jugador
+  
+        // Crear un elemento de imagen
+        var img = document.createElement('img');
+        img.src ='img/messi'+(jugador.indice + 1)+'.png';  // Genera dinámicamente la ruta a la imagen del jugador
+        img.alt = jugador.nombre;
+        img.style.border = 'none';  // Elimina el borde de la imagen
+  
+        // Agregar la imagen al div del jugador
+        div.appendChild(img);
+  
+        // Crear un elemento de texto para el nombre del jugador
+        var nombre = document.createElement('p');
+        nombre.textContent = jugador.nombre;
+        nombre.style.border = 'none';  // Elimina el borde del nombre
+    
+        nombre.style.padding = '14px';  // Agrega padding
+        nombre.style.backgroundColor = '#f2f2f2';  // Cambia el color de fondo
+        nombre.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px px 0 rgba(0, 0, 0, 0.19)';  // Agrega sombra
+        div.appendChild(nombre);
+  
+        div.addEventListener('click', function() {
+          for (var i = 0; i < contenedorEstadisticas.length; i++) {
+            contenedorEstadisticas[i].style.display = i === jugador.indice ? 'block' : 'none';
           }
-        }
-        window.onload = function() {
-  var slider = document.getElementById('slider');
-  var players = Array.from(slider.getElementsByClassName('player'));
-  var stats = Array.from(document.getElementsByClassName('stats'));
-  var index = 0;
-
-  function updateStats() {
-    stats.forEach(function(stat, i) {
-      stat.style.display = i === index ? 'block' : 'none';
-    });
-  }
-
-  document.getElementById('prev').onclick = function() {
-    // Oculta todos los jugadores
-    players.forEach(function(player) {
-      player.style.display = 'none';
-    });
-  
-    // Actualiza el índice al jugador anterior
-    index = (index - 1 + players.length) % players.length;
-  
-    // Muestra todos los jugadores a partir del jugador en la posición del índice
-    for (var i = 0; i < 5; i++) {
-      players[(index + i) % players.length].style.display = 'block';
+        });
+        contenedorJugadores.appendChild(div);
+      }); 
     }
-  
-    // Actualiza las estadísticas
-    updateStats();
-  };
-
-  document.getElementById('next').onclick = function() {
-    // Oculta todos los jugadores
-    players.forEach(function(player) {
-      player.style.display = 'none';
+    campoBusqueda.addEventListener('input', function() {
+      var busqueda = campoBusqueda.value.toLowerCase();
+      if (busqueda) {
+        jugadores = jugadoresOriginales.filter(function(jugador) {
+          return jugador.nombre.toLowerCase().includes(busqueda);
+        });
+      } else {
+        jugadores = jugadoresOriginales.slice();
+      }
+      indiceActual = 0;
+      mostrarJugadores();
+    });
+      
+    flechaIzquierda.addEventListener('click', function() {
+      if (indiceActual > 0) {
+        indiceActual--;
+        mostrarJugadores();
+      }
     });
   
-    // Actualiza el índice al próximo jugador
-    index = (index + 1) % players.length;
-  
-    // Muestra todos los jugadores a partir del jugador en la posición del índice
-    for (var i = 0; i < 5; i++) {
-      players[(index + i) % players.length].style.display = 'block';
-    }
-  
-    // Actualiza las estadísticas
-    updateStats();
-  };
-
-  // Muestra los primeros cinco jugadores al cargar la página
-  for (var i = 0; i < 5; i++) {
-    players[i].style.display = 'block';
-  }
-  updateStats();
-};
-
-
-
-window.onload = function() {
-  var slider = document.getElementById('slider');
-  var players = Array.from(slider.getElementsByClassName('player'));
-  var stats = Array.from(document.getElementsByClassName('stats'));
-  var index = 0;
-
-  function updateStats() {
-    stats.forEach(function(stat, i) {
-      stat.style.display = i === (index + 2) % players.length ? 'block' : 'none';
+    flechaDerecha.addEventListener('click', function() {
+      if (indiceActual < jugadores.length - 5) {
+        indiceActual++;
+        mostrarJugadores();
+      }
     });
-  }
-
-  document.getElementById('prev').onclick = function() {
-    players[(index + 4) % players.length].style.display = 'none';
-    index = (index - 1 + players.length) % players.length;
-    players[index].style.display = 'block';
-    players[(index + 1) % players.length].style.display = 'block';
-    players[(index + 2) % players.length].style.display = 'block';
-    players[(index + 3) % players.length].style.display = 'block';
-    players[(index + 4) % players.length].style.display = 'block';
-    updateStats();
-  };
-
-  document.getElementById('next').onclick = function() {
-    players[index].style.display = 'none';
-    index = (index + 1) % players.length;
-    players[index].style.display = 'block';
-    players[(index + 1) % players.length].style.display = 'block';
-    players[(index + 2) % players.length].style.display = 'block';
-    players[(index + 3) % players.length].style.display = 'block';
-    players[(index + 4) % players.length].style.display = 'block';
-    updateStats();
-  };
-
-  for (var i = 0; i < 5; i++) {
-    players[i].style.display = 'block';
-  }
-  updateStats();
-};
-            </script>
-    <div class="header">
-        <h1>Los Chicos Del Barrio</h1>
-    </div>
-    <div class="nav">
-        <img src="img/escudo.png" alt="losDelBarrio" >
-        <a href="index.html">Inicio</a>
-        <a href="jugadores.html">Jugadores</a>
-        <a href="clasificacion.html">Clasificacion</a>
-    </div>
-    <div class="main">
-     
-        <div id="prev" class="arrow" style="float: left;">←</div>
-        <div id="slider" class="slider">
-          <div class="player">Jugador 1</div>
-          <div class="player">Jugador 2</div>
-          <div class="player">Jugador 3</div>
-          <div class="player">Jugador 4</div>
-          <div class="player">Jugador 5</div>
-          <div class="player" style="display: none;">Jugador 6</div>
-          <div class="player" style="display: none;">Jugador 7</div>
-          <div class="player" style="display: none;">Jugador 8</div>
-          <div class="player" style="display: none;">Jugador 9</div>
-          <div class="player" style="display: none;">Jugador 10</div>
-        </div>
-        <div id="next" class="arrow" style="float: right;">→</div>
-        <div class="stats">Estadísticas del Jugador 1</div>
-        <div class="stats">Estadísticas del Jugador 2</div>
-        <div class="stats">Estadísticas del Jugador 3</div>
-        <div class="stats">Estadísticas del Jugador 4</div>
-        <div class="stats">Estadísticas del Jugador 5</div>
-        <div class="stats">Estadísticas del Jugador 6</div>
-        <div class="stats">Estadísticas del Jugador 7</div>
-        <div class="stats">Estadísticas del Jugador 8</div>
-        <div class="stats">Estadísticas del Jugador 9</div>
-        <div class="stats">Estadísticas del Jugador 10</div>
+  
+    mostrarJugadores();
+}  
+    
 
 
 
-
-
-
-    </div>
+  </script>
+  
+  
+  
+  </div>
 </body>
 </html>

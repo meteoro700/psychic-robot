@@ -8,18 +8,29 @@
 </head>
 <body>
     <script>
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-            document.querySelector(".nav img").style.width = "6%";
-          
-          } else {
-            document.querySelector(".nav img").style.width = "9%";
- 
-          }
-        }
-    
+         window.onscroll = function() {
+  if (window.innerWidth <= 991) {
+    scrollFunctionMobile();
+  } else {
+    scrollFunctionPC();
+  }
+};
+
+function scrollFunctionMobile() {
+  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+    document.querySelector(".nav img").style.width = "6%";
+  } else {
+    document.querySelector(".nav img").style.width = "9%";
+  }
+}
+
+function scrollFunctionPC() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.querySelector(".nav img").style.width = "3%";
+  } else {
+    document.querySelector(".nav img").style.width = "4%";
+  }
+}
             </script>
     <div class="header">
         <p class="tituloHeader">RANKING</p>
@@ -33,7 +44,7 @@
     <div class="main">
 
         <div class="table" style="overflow-x:auto; ">  
-            <table id="rankingTable1" style=" width: 1%; float: left;" >
+            <table id="rankingTable1" >
                 <tr>
                     <th>N.</th>
                 </tr>
@@ -54,7 +65,7 @@
                 <tr id="dos"><td>15</td></tr>
                 <tr id="dos"><td>16</td></tr>
             </table>
-        <table id="rankingTable" style="width: 91%; float: left;" >
+        <table id="rankingTable"  >
             <colgroup>
                 <col>
                 <col>

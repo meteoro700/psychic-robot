@@ -1,0 +1,76 @@
+var jugadoresOriginales = [];
+var nombres = ['Matias Ochoa', 'Cristian Basquet', 'Abraham Blazques', 'Leonel Vallejos', 'Alex Tarraga', 'Rodrigo Condori', 'Gustavo Garzon', 'Irrael Blazques', 'Dante Acosta', 'Brayan Padilla'];
+
+for (var i = 1; i <= 10; i++) {
+  jugadoresOriginales.push({ indice: i - 1, nombre: nombres[i - 1] });
+}
+var jugadores = jugadoresOriginales.slice();
+
+var contenedorJugadores = document.getElementById('jugadores');
+var contenedorEstadisticas = document.getElementsByClassName('stats');
+var campoBusqueda = document.getElementById('busqueda');
+var flechaIzquierda = document.getElementById('flechaIzquierda');
+var flechaDerecha = document.getElementById('flechaDerecha');
+
+function mostrarJugadores() {
+  contenedorJugadores.innerHTML = '';
+  jugadores.forEach(function(jugador) {
+    var div = document.createElement('div');
+    div.className = 'jugador';
+    div.style.border = 'none';  // Elimina el borde del div del jugador
+
+    // Crear un elemento de imagen
+    var img = document.createElement('img');
+    img.src ='img/messi'+(jugador.indice + 1)+'.png';  // Genera dinámicamente la ruta a la imagen del jugador
+    img.alt = jugador.nombre;
+    img.style.border = 'none';  // Elimina el borde de la imagen
+
+    // Agregar la imagen al div del jugador
+    div.appendChild(img);
+
+    // Crear un elemento de texto para el nombre del jugador
+    var nombre = document.createElement('p');
+    nombre.textContent = jugador.nombre;
+    nombre.style.border = 'none';  // Elimina el borde del nombre
+    nombre.style.borderRadius = '10px';  // Agrega bordes redondeados
+    nombre.style.padding = '10px';  // Agrega padding
+    nombre.style.backgroundColor = '#f2f2f2';  // Cambia el color de fondo
+    nombre.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';  // Agrega sombra
+    div.appendChild(nombre);
+
+    div.addEventListener('click', function() {
+      for (var i = 0; i < contenedorEstadisticas.length; i++) {
+        contenedorEstadisticas[i].style.display = i === jugador.indice ? 'block' : 'none';
+      }
+    });
+    contenedorJugadores.appendChild(div);
+  }); 
+}
+
+campoBusqueda.addEventListener('input', function() {
+  var busqueda = campoBusqueda.value.toLowerCase();
+  if (busqueda) {
+    jugadores = jugadoresOriginales.filter(function(jugador) {
+      return jugador.nombre.toLowerCase().includes(busqueda);
+    });
+  } else {
+    jugadores = jugadoresOriginales.slice();
+  }
+  mostrarJugadores();
+});
+
+flechaIzquierda.addEventListener('click', function() {
+  if (indiceActual > 0) {
+    indiceActual--;
+    mostrarJugadores();
+  }
+});
+
+flechaDerecha.addEventListener('click', function() {
+  if (indiceActual < jugadores.length - 5) {
+    indiceActual++;
+    mostrarJugadores();
+  }
+});
+
+mostrarJugadores();
