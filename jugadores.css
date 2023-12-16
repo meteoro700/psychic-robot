@@ -204,7 +204,7 @@ body {
         }
         
         .jugador:hover {
-            box-shadow: 0 2px 20px rgb(255, 255, 255);
+            box-shadow: 0 2px 20px rgb(19, 161, 255);
         }
         
         .stats {
