@@ -121,6 +121,7 @@ body {
         margin-top: 25%;
         padding: 10px;
     }
+    
  }
 
     /**PC**/
@@ -179,15 +180,17 @@ body {
         .main {
          margin: 0;
             margin-top: 130px; 
-            width: 90%;
-            margin-left: 5%;
+            width: 100%;
+           
             z-index: 10;
         }
         
         #jugadores {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 120px;
+            width: 90%;
+            margin-left: 5%;
         }
         
         .jugador {
@@ -204,24 +207,17 @@ body {
         }
         
         .jugador:hover {
-            box-shadow: 0 2px 20px rgb(19, 161, 255);
+            box-shadow: 0 2px 20px rgb(202, 188, 104);
         }
         
-        .stats {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: none; /* Añade esta línea */
-        }
+ 
         
         #flechaIzquierda, #flechaDerecha {
             position: fixed;
             top: 50%;
-            width: 50px;
-            height: 50px;
-            background-color: #007BFF;
+            width: 45px;
+            height: 45px;
+            background-color: #be9c00;
             color: #fff;
             border-radius: 50%;
             display: flex;
@@ -240,7 +236,7 @@ body {
         }
         
         #flechaIzquierda:hover, #flechaDerecha:hover {
-            background-color: #0056b3;
+            background-color: #f8cb01;
         }
         
         #busqueda{
@@ -248,4 +244,46 @@ body {
             margin-top: 3%;
             padding: 10px;
         }  
+        .stats {
+            margin-top: -5%;
+            width: 100%;
+            background-color: black;
+            padding: 15px;
+            box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+            display: none;
+            padding-bottom: 5%;
+        }
+        #tituloestadisticas{
+            font-size: 31px;
+            color: #ddd;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+        .orange{
+            color:goldenrod;
+            font-size: 15px; 
+            margin: auto;
+        
+        }
+        #tamañoTabla{
+            width: 60%;
+            margin: auto;
+       
+        }
+    .tdText{
+            font-size: 80px; 
+            color:white;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-align: center;
+       
+        }
+     
+        #buscador{
+          text-align: center;
+        }
     }
