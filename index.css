@@ -80,6 +80,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          
         }
         
         /* Hamburger Line */
@@ -189,8 +190,8 @@
           color: #ed1c24;
         } 
         #parrafoportada{
-          margin-left: 5%;
-          margin-top: -80%;
+          margin-left: 6%;
+          margin-top: -90%;
           font-size: 60px;
           color: #e7e4e4;
           font-family: 'artistryjnl';
@@ -216,8 +217,8 @@
 }
 #mi-boton {
   display: inline-block;
-  padding: 10px 1px; /* Aumenta el padding para un botón más grande */
-  font-size: 17px; /* Aumenta el tamaño de la fuente para un texto más grande */
+  padding: 13px 1px; /* Aumenta el padding para un botón más grande */
+  font-size: 22px; /* Aumenta el tamaño de la fuente para un texto más grande */
   text-align: center;
   cursor: pointer;
   outline: none;
@@ -230,10 +231,10 @@
   overflow: hidden;
   position: relative;
   transition: color 0.5s;
-  width: 120px; /* Ajusta el ancho del botón */
+  width: 150px; /* Ajusta el ancho del botón */
   font-family: 'botton';
-  margin-top: 20%;
-  margin-left: 7%;
+  margin-top: 33%;
+  margin-left: 8%;
 
 }
 
