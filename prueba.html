@@ -1,312 +1,171 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
-    <title>GODISH</title>
 <style>
- @font-face {
-        font-family: 'winner-sans';
-        src: url('font/sportsfonts-winner-sans-cond-regular.otf') format('truetype');
-      }
-      @font-face { 
-        font-family: 'artistryjnl';
-        src: url('font/artistryjnl.ttf') format('truetype');
-      }
-      @font-face { 
-        font-family: 'botton';
-        src: url('font/URBANO\ Regular.ttf') format('truetype');
-      }
-      body {
-      background-color: #000000;
-        margin: 0;
-        padding: 0;
-       
-      }
-      .clearfix::after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      .header{
-          background:#000000;
-          padding-bottom: 3em;
-      }
-      .titulo{
-          background:#000000;
-          width: 80%;
-      
-      }
-      .titulo img{
-          padding-top: 70px;
-      float: right;
-      padding-right: 2em;
-      }
-      .titulo h2{
-      float: left;
-      color:#fff; 
-      padding-left: 70px;
-      padding-top:40px ;
-      font-family: 'winner-sans', sans-serif;
-      font-size: 4em; transform: scaleY(1.5);
-      font-weight: 100;
-      }
-      
-      .menu-wrap {
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 1;
-      }
-      
-      .menu-wrap .toggler {
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        z-index: 2;
-        cursor: pointer;
-        width: 100px;
-        height: 100px;
-        opacity: 0;
-      }
-      
-      .menu-wrap .hamburger {
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        z-index: 1;
-        width: 100px;
-        height: 100px;
-        padding: 2em;
-        background: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      /* Hamburger Line */
-      .menu-wrap .hamburger > div {
-        position: relative;
-        width: 100%;
-        height: 3px;
-        background-color: #000000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.4s ease;
-      }
-      
-      /* Hamburger Lines - Top & Bottom */
-      .menu-wrap .hamburger > div:before,
-      .menu-wrap .hamburger > div:after {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        top: -10px;
-        width: 100%;
-        height: 2px;
-        background: inherit;
-      }
-      
-      /* Moves Line Down */
-      .menu-wrap .hamburger > div:after {
-        top: 10px;
-      }
-      
-      /* Toggler Animation */
-      .menu-wrap .toggler:checked + .hamburger > div {
-        transform: rotate(135deg);
-      }
-      
-      /* Turns Lines Into X */
-      .menu-wrap .toggler:checked + .hamburger > div:before,
-      .menu-wrap .toggler:checked + .hamburger > div:after {
-        top: 0;
-        transform: rotate(90deg);
-      }
-      
-      /* Rotate On Hover When Checked */
-      .menu-wrap .toggler:checked:hover + .hamburger > div {
-        transform: rotate(225deg);
-      }
-      
-      /* Show Menu */
-      .menu-wrap .toggler:checked ~ .menu {
-        visibility: visible;
-      }
-      
-      .menu-wrap .toggler:checked ~ .menu > div {
-        transform: translateX(0);
-        transition-duration: 0.5s;
-        background: rgb(255, 255, 255);
-      }
-      
-      .menu-wrap .menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        visibility: hidden;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-      }
-      
-      .menu-wrap .menu > div {
-        background: rgba(255, 255, 255, 0);
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex: none;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.4s ease,background 0.75s ease; 
-        transform: translateX(100%);
-      }
-      
-      .menu-wrap .menu > div > div {
-        text-align: center;
-        max-width: 90vw;
-        max-height: 100vh;
-        opacity: 1;
-        transition: opacity 0.4s ease;
-      }
-      
-      .menu-wrap .menu > div > div > ul > li {
-        list-style: none;
-        color: #333;
-        font-size: 1.5em;
-        padding: 1em;
-      }
-      
-      .menu-wrap .menu > div > div > ul > li > a {
-        color: inherit;
-        text-decoration: none;
-        transition: color 0.4s ease;
-      }
-      
-      .menu-wrap .menu > div > div > ul > li > a:hover {
-        color: #ed1c24;
-      }
-      #parrafoportada{
-          margin-left: 5%;
-          margin-top: -80%;
-          font-size: 200px;
-          color: #e7e4e4;
-          font-family: 'artistryjnl';
-          font-weight: bold;
-          letter-spacing: 5px;
-      }
-      #mi-boton {
-          display: inline-block;
-          padding: 35px 30px; /* Aumenta el padding para un botón más grande */
-          font-size: 50px; /* Aumenta el tamaño de la fuente para un texto más grande */
-          text-align: center;
-          cursor: pointer;
-          outline: none;
-          color: #1af05a;
-          background-color: #039203;
-          border: none;
-          border-radius: 0px;
-          box-shadow: 10px 10px #0f4904d8;
-          text-decoration: none;
-          overflow: hidden;
-          position: relative;
-          transition: color 0.5s;
-          width: 300px; /* Ajusta el ancho del botón */
-          font-family: 'botton';
-          margin-top: 11%;
-          margin-left: 7%;
-      
-      }
-      
-      #mi-boton:hover {
-          color: #000;
-      }
-      
-      #mi-boton:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: #fff;
-          z-index: 1;
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.5s;
-      }
-      .main {
-          background-color:azure;
-           margin: 0;
-              margin-top: 17%; 
-              padding-top: 20%;
-          }
-          .container {
-              max-width: 98%;
-              width: 100%;
-              background-color: #6e6b6b;
-              border-radius: 10px;
-              box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
-              margin-left: 1%;
-          }
-          .container1 {
-         
-              max-width: 80%;
-              width: 100%;
-              background-color: #07612c;
-              border-radius: 10px;
-              box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
-           
-              margin-left: 1%;
-          }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.ranking {
+  list-style: none;
+  padding: 0;
+  width: 50%;
+  margin: auto;
+  display: none; /* Oculta las listas por defecto */
+}
+.ranking.active {
+  display: block; /* Muestra la lista cuando está activa */
+}
+
+.ranking li {
+  background-color: #f2f2f2;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  transition: all 0.5s ease;
+}
+
+.ranking li:nth-child(1) {
+  font-size: 2em;
+  padding: 40px;
+  background-color: #1abc9c;
+  color: white;
+}
+
+.ranking li:nth-child(2) {
+  font-size: 1.8em;
+  padding: 35px;
+  background-color: #3498db;
+  color: white;
+}
+
+.ranking li:nth-child(3) {
+  font-size: 1.6em;
+  padding: 30px;
+  background-color: #9b59b6;
+  color: white;
+}
+
+.ranking li:nth-child(4) {
+  font-size: 1.4em;
+  padding: 25px;
+  background-color: #e67e22;
+  color: white;
+}
+
+.ranking li:nth-child(5) {
+  font-size: 1.2em;
+  padding: 20px;
+  background-color: #e74c3c;
+  color: white;
+}
+
+.ranking li:nth-child(n+6) {
+  font-size: 1em;
+  padding: 15px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  left: 100%;
+  top: 0;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  display: inline-block; /* Añade esta línea */
+}
 </style>
 </head>
 <body>
-    
-
-
-<div class="main">
-   <div class="container">    
-                <h1 class="mvp">&nbsp; &nbsp; MVP</h1>
-           <img src="img/mvp.png" alt="mvp">
-           <p class="list1">&nbsp; Ranking  &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;   Nombre    &nbsp; &nbsp; &emsp;  &nbsp; &nbsp; &nbsp; &nbsp; Asistencia</p>
-           <hr>
-           <h4 class="list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2        
-            &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp;     Godish    
-            &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp;   14</h4>
-           <hr>
-           <h4 class="list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3        
-            &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp;     Erick    
-            &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp; &nbsp;&emsp; 3</h4>
-           <br>
-        </div>
-        <div class="container1">
-                <h1 class="mvp"> &nbsp; &nbsp;Goles</h1>
-        <img src="img/gol.png" alt="gol">
-        <p class="list1">&nbsp; Ranking  &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;   Nombre    &nbsp; &nbsp; &emsp;  &nbsp; &nbsp; &nbsp; &nbsp; Asistencia</p>
-        <hr>
-        <h4 class="list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2        
-         &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp;    Godish    
-         &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp;   14</h4>
-        <hr>
-        <h4 class="list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3        
-         &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp;   Erick    
-         &ensp;  &nbsp; &nbsp; &nbsp; &nbsp; &emsp;  &nbsp; &nbsp;&emsp;  &nbsp; &nbsp;&emsp;  3</h4>
-         <br>
-        </div>
-        
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>gsdfsfs
-       
+  
+  <div class="dropdown" onclick="toggleMenu()">
+    <img src="menu_icon.png" alt="Menu">
+    <div class="dropdown-content" id="dropdown-content">
+      <img src="img/goles.png" alt="Goles" class="icon" onclick="showRanking('goles')">
+      <img src="img/targeta.png" alt="Tarjetas" class="icon" onclick="showRanking('tarjetas')">
+      <img src="img/mvpss.png" alt="MVP" class="icon" onclick="showRanking('mvp')">
+      
     </div>
-
-<script>
-    document.getElementById("mi-boton").onclick = function() {
-    this.style.backgroundColor = "#72ff9c";
+  </div>
+  <br><br>
+  <ul class="ranking" id="goles">
+      <li>JCristian</li>
+      <li>Jugador 2</li>
+      <li>Jugador 3</li>
+      <li>Jugador 4</li>
+      <li>Jugador 5</li>
+      <li>Jugador 6</li>
+      <li>Jugador 7</li>
+      <li>Jugador 8</li>
+      <li>Jugador 9</li>
+      <li>Jugador 10</li>
+  </ul>
+  
+  <ul class="ranking" id="tarjetas">
+    <li>Nino</li>
+    <li>Jugador 2</li>
+    <li>Jugador 3</li>
+    <li>Jugador 4</li>
+    <li>Jugador 5</li>
+    <li>Jugador 6</li>
+    <li>Jugador 7</li>
+    <li>Jugador 8</li>
+    <li>Jugador 9</li>
+    <li>Jugador 10</li>
+  </ul>
+  
+  <ul class="ranking" id="mvp">
+    <li>Chelelo</li>
+    <li>Jugador 2</li>
+    <li>Jugador 3</li>
+    <li>Jugador 4</li>
+    <li>Jugador 5</li>
+    <li>Jugador 6</li>
+    <li>Jugador 7</li>
+    <li>Jugador 8</li>
+    <li>Jugador 9</li>
+    <li>Jugador 10</li>
+  </ul>
+  
+  <script>
+  function toggleMenu() {
+  var dropdownContent = document.getElementById('dropdown-content');
+  if (dropdownContent.style.display === 'none') {
+    dropdownContent.style.display = 'block';
+  } else {
+    dropdownContent.style.display = 'none';
+  }
 }
-</script>
+
+function showRanking(id) {
+  // Oculta todas las listas
+  var rankings = document.querySelectorAll('.ranking');
+  for (var i = 0; i < rankings.length; i++) {
+    rankings[i].classList.remove('active');
+  }
+
+  // Muestra la lista correspondiente
+  document.getElementById(id).classList.add('active');
+
+  // Cierra el menú
+  document.getElementById('dropdown-content').style.display = 'none';
+}
+  </script>
+  
+
 </body>
 </html>
