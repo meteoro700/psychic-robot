@@ -333,7 +333,7 @@ table {
   border-collapse: collapse;
   
   font-family: Arial, sans-serif;  /* Usa la fuente que prefieras */
-  margin-left: 7%;
+  margin-left: 10%;
 }
 
 th, td {
@@ -353,22 +353,13 @@ tr:hover {background-color: #f5f5f5;}
 
 
 .entrar{
- padding-left: 36px;
- padding-right: 36px;
- padding-top: 15px;
- padding-bottom: 15px;
+ padding-left: 35px;
+ padding-right: 35px;
+ padding-top: 20px;
+ padding-bottom: 25px;
 }
-/* Estilos para los primeros cinco nombres */
-tr:nth-child(1) { font-size: 18px; }  /* 1er nombre */
-tr:nth-child(2) { font-size: 18px; }  /* 1er nombre */
-tr:nth-child(3) { font-size: 18px; }  /* 2do nombre */
-tr:nth-child(4) { font-size: 18px; }  /* 3er nombre */
-tr:nth-child(5) { font-size: 18px; }  /* 4to nombre */
-tr:nth-child(6) { font-size: 18px; }  /* 5to nombre */
-
-/* Estilos para los nombres del 6 en adelante */
 tr:nth-child(n+7) { font-size: 14px; }  /* 6to nombre en adelante */
-
+tr:nth-child(1) { font-size: 10px; }  /* 6to nombre en adelante */
 .table2 td:nth-child(3) {
   background-color: #ebea95; /* Color de fondo azul claro */
   color: #000000; /* Color de texto negro */
@@ -394,6 +385,12 @@ tr:nth-child(n+7) { font-size: 14px; }  /* 6to nombre en adelante */
   background-color: #95ebae; /* Color de fondo verde */
   color: #FFFFFF; /* Color de texto blanco */
 }
+.ranking-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 5px;
+}
+
     }
     /**PC**/
 @media (min-width: 991px){
