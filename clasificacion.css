@@ -258,7 +258,7 @@ body {
                 height:40px;
                 display: inline-block; /* Añade esta línea */
                 cursor: pointer;
-                opacity: 0.6;
+                opacity: 0.4;
                 transition: opacity 0.3s ease;  
               }
               .container {
@@ -323,58 +323,77 @@ body {
   justify-content: center;
   margin: 0;
   margin-top: 10%;
+  margin-bottom: 40%;
 }
 
 /* Estilos generales para las tablas */
 table {
-  width: 98%;  /* Ajusta este valor según tus necesidades */
+
+  width: 90%;  /* Ajusta este valor según tus necesidades */
   border-collapse: collapse;
-  margin: 20px 1%;  /* 1% de margen a ambos lados */
+  
   font-family: Arial, sans-serif;  /* Usa la fuente que prefieras */
+  margin-left: 7%;
 }
 
 th, td {
   border: 1px solid #ddd;
-  padding: 10px;
+ 
   text-align: center;
 }
 
 /* Dar un color de fondo a la cabecera de la tabla */
 th {
-  background-color: #4CAF50;
+  background-color: #000000;
   color: white;
 }
 
 /* Cambiar el color de fondo al pasar el cursor sobre las filas */
 tr:hover {background-color: #f5f5f5;}
 
-.table1, .table3 {
-  width: 100%;
-  margin-left: 6%;
-  border-collapse: collapse;
 
-}
-
-.table2 {
-  width: 100%;
-  margin-left: 8%;
-  
-
-}
 .entrar{
  padding-left: 36px;
  padding-right: 36px;
+ padding-top: 15px;
+ padding-bottom: 15px;
 }
 /* Estilos para los primeros cinco nombres */
-tr:nth-child(2) { font-size: 24px; }  /* 1er nombre */
-tr:nth-child(3) { font-size: 22px; }  /* 2do nombre */
-tr:nth-child(4) { font-size: 20px; }  /* 3er nombre */
+tr:nth-child(1) { font-size: 18px; }  /* 1er nombre */
+tr:nth-child(2) { font-size: 18px; }  /* 1er nombre */
+tr:nth-child(3) { font-size: 18px; }  /* 2do nombre */
+tr:nth-child(4) { font-size: 18px; }  /* 3er nombre */
 tr:nth-child(5) { font-size: 18px; }  /* 4to nombre */
-tr:nth-child(6) { font-size: 16px; }  /* 5to nombre */
+tr:nth-child(6) { font-size: 18px; }  /* 5to nombre */
 
 /* Estilos para los nombres del 6 en adelante */
 tr:nth-child(n+7) { font-size: 14px; }  /* 6to nombre en adelante */
 
+.table2 td:nth-child(3) {
+  background-color: #ebea95; /* Color de fondo azul claro */
+  color: #000000; /* Color de texto negro */
+}
+.table2 td:nth-child(4) {
+  background-color: #eb9595; /* Color de fondo azul claro */
+  color: #000000; /* Color de texto negro */
+}
+.table3 td:nth-child(3) {
+  background-color: #c2befc; /* Color de fondo azul claro */
+  color: #000000; /* Color de texto negro */
+}
+.ranking-table td:nth-child(1) {
+  background-color: #4d4d4d; /* Color de fondo azul claro */
+  color: #ebebeb; /* Color de texto negro */
+  font-size: 10px;
+}
+.ranking-table tr:nth-child(-n+6) td:nth-child(3) {
+ 
+  color: #295325; /* Color de texto negro */
+}
+.non-zero {
+  background-color: #95ebae; /* Color de fondo verde */
+  color: #FFFFFF; /* Color de texto blanco */
+}
     }
     /**PC**/
 @media (min-width: 991px){
