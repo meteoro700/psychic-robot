@@ -8,42 +8,32 @@
   
 </head>
 <body>
-  <script>
-    window.onscroll = function() {
-if (window.innerWidth <= 991) {
-scrollFunctionMobile();
-} else {
-scrollFunctionPC();
-}
-};
+  <div class="header">
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler">
+      <div class="hamburger"><div></div></div>
+      <div class="menu">
+        <div>
+          <div>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="jugadores.html">Jugadores</a></li>
+              <li><a href="clasificacion.html">Clasificacion</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="titulo clearfix">
+    <h2> INSANOS DEL BARRIO</h2>
+    <a href="bolsaDinero.html"><img src="img/bolsadeDinero.png" alt="bolsadedinero"></a>
+    </div>
+    </div>
 
-function scrollFunctionMobile() {
-if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-document.querySelector(".nav img").style.width = "6%";
-} else {
-document.querySelector(".nav img").style.width = "9%";
-}
-}
-
-function scrollFunctionPC() {
-if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-document.querySelector(".nav img").style.width = "3%";
-} else {
-document.querySelector(".nav img").style.width = "4%";
-}
-}
-       </script>
-<div class="header">
-   <p class="tituloHeader">JUGADORES</p>
-</div>
-<div class="nav">
-   <img src="img/escudo.png" alt="losDelBarrio" >
-   <a href="index.html">Inicio</a>
-   <a href="jugadores.html">Jugadores</a>
-   <a href="clasificacion.html">Clasificacion</a>
-</div>
 <div class="main">
-
+  <p class="tituloClasificatiria">JUGADORES</p>
+  <hr>
   <div id="buscador"><input type="text" id="busqueda" placeholder="Buscar jugador..."></div>
   <div id="flechaIzquierda">←</div>
   <div id="jugadores"></div>
