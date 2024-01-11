@@ -266,13 +266,14 @@
  .main {
    display: flex;
    justify-content: space-around;
-   padding: 20px;
+   padding: 10px;
    font-family: Arial, sans-serif;
    background: #008000;
    color: #fff;
    animation: fadeIn 2s;
    margin: 0;
    margin-top: 25%; 
+   
   
  }
  
@@ -306,9 +307,40 @@
  .player:last-child {
    border-bottom: none;
  }
+ #parrafoPRIME{
 
+ font-size: 40px;
+ color: #e7e4e4;
+ font-family: 'artistryjnl';
+ font-weight: bold;
+ letter-spacing: 3px;
+}
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 50%;
+}
 
+.carousel div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100vw;
+  height: 50vh; /* Ajusta esto para cambiar la altura */
+  background: #eee;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+}
 
+.carousel div:target {
+  transform: scale(0.8);
+}
 }
 /**PC**/
 @media (min-width: 991px) {
