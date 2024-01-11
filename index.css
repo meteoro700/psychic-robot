@@ -26,8 +26,12 @@
     clear: both;
   }
         .header{
-            background:#000000;
-            padding-bottom: 7%;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 100;
+      background:#000000;
+      padding-bottom: 7%;
         }
         .titulo{
             background:#000000;
