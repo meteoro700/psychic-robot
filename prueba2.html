@@ -15,55 +15,66 @@
 </style>
 </head>
 <body>
-    <div id="ruleta" class="ruleta">
-        <img class="imagen" src="img/amarilla1.png">
-        <img class="imagen" src="img/bienvenida.png">
-        <img class="imagen" src="img/roja1.png">
-        <!-- Agrega más imágenes según lo necesites -->
+    <div class="main">
+        <center>
+            <p id="parrafoPRIME">P R I M E</p> <br>
+            <div id="ruleta" class="ruleta">
+                <div class="imagen" style="background-image: url('img/gol.png');"></div>
+                <div class="imagen" style="background-image: url('img/rrr.jpg');"></div>
+                <div class="imagen" style="background-image: url('img/gol.png');"></div>
+                <!-- Agrega más imágenes según lo necesites -->
+            </div>
+        </center>
     </div>
-
+    
     <script>
-      var ruleta = document.getElementById('ruleta');
-      var imagenes = Array.from(ruleta.children);
-      var indiceActual = 0;
-      var inicioX;
-
-      ruleta.addEventListener('touchstart', function(evento) {
-          inicioX = evento.touches[0].clientX;
-      }, false);
-
-      ruleta.addEventListener('touchmove', function(evento) {
-          var movimientoX = evento.touches[0].clientX;
-          var diferenciaX = inicioX - movimientoX;
-          var desplazamiento = -100 * indiceActual - diferenciaX / window.innerWidth * 100;
-          imagenes.forEach(function(imagen) {
-              imagen.style.transform = 'translateX(' + desplazamiento + '%)';
-          });
-      }, false);
-
-      ruleta.addEventListener('touchend', function() {
-          if (inicioX < window.innerWidth / 2) {
-              indiceActual--;
-          } else {
-              indiceActual++;
-          }
-          if (indiceActual < 0) indiceActual = 0;
-          if (indiceActual >= imagenes.length) indiceActual = imagenes.length - 1;
-          var desplazamiento = -100 * indiceActual;
-          imagenes.forEach(function(imagen) {
-              imagen.style.transform = 'translateX(' + desplazamiento + '%)';
-          });
-      }, false);
-
-      // Gira la ruleta automáticamente cada 3 segundos
-      setInterval(function() {
-          indiceActual++;
-          if (indiceActual >= imagenes.length) indiceActual = 0;
-          var desplazamiento = -100 * indiceActual;
-          imagenes.forEach(function(imagen) {
-              imagen.style.transform = 'translateX(' + desplazamiento + '%)';
-          });
-      }, 5000);
-  </script>
+        document.getElementById("mi-boton").onclick = function() {
+            this.style.backgroundColor = "#72ff9c";
+        }
+    
+        // ruleta
+        var ruleta = document.getElementById('ruleta');
+        var imagenes = Array.from(ruleta.children);
+        var indiceActual = 0;
+        var inicioX;
+    
+        ruleta.addEventListener('touchstart', function(evento) {
+            inicioX = evento.touches[0].clientX;
+        }, false);
+    
+        ruleta.addEventListener('touchmove', function(evento) {
+            var movimientoX = evento.touches[0].clientX;
+            var diferenciaX = inicioX - movimientoX;
+            var desplazamiento = -100 * indiceActual - diferenciaX / window.innerWidth * 100;
+            imagenes.forEach(function(imagen) {
+                imagen.style.transform = 'translateX(' + desplazamiento + '%)';
+            });
+        }, false);
+    
+        ruleta.addEventListener('touchend', function() {
+            if (inicioX < window.innerWidth / 2) {
+                indiceActual--;
+            } else {
+                indiceActual++;
+            }
+            if (indiceActual < 0) indiceActual = 0;
+            if (indiceActual >= imagenes.length) indiceActual = imagenes.length - 1;
+            var desplazamiento = -100 * indiceActual;
+            imagenes.forEach(function(imagen) {
+                imagen.style.transform = 'translateX(' + desplazamiento + '%)';
+            });
+        }, false);
+    
+        // Gira la ruleta automáticamente cada 3 segundos
+        setInterval(function() {
+            indiceActual++;
+            if (indiceActual >= imagenes.length) indiceActual = 0;
+            var desplazamiento = -100 * indiceActual;
+            imagenes.forEach(function(imagen) {
+                imagen.style.transform = 'translateX(' + desplazamiento + '%)';
+            });
+        }, 5000);
+    </script>
+    
 </body>
 </html>

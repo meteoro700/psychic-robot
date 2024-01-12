@@ -37,67 +37,155 @@
       <a href="clasificacion.html" id="mi-boton">VER CLASIFICACION</a> 
       <div class="main">
         <center>
-         <p id="parrafoPRIME">PRIME</p> <br>
-         <div id="ruleta" class="ruleta">
-          <img class="imagen" src="img/gol.png">
-          <img class="imagen" src="img/rrr.jpg">
-          <img class="imagen" src="img/gol.png">
-          <!-- Agrega más imágenes según lo necesites -->
-        </div>
-          </center>
-          
-      </div>
-        
- 
-         
-      <script>
+          <hr>
+            <p id="parrafoPRIME">P R I M E</p> <br>
+            <hr>
+            <div id="ruleta" class="ruleta">
+
+                <div class="imagen" >
+                  <div class="headerJugador">
+                    <div class="imagenicono">
+                      <img src="img/mvpss.png" alt="mvpss">
+                    </div>
+                    <div class="texticono">
+                      <p>M V P</p>
+                      <h4>JUGADOR MAS VALIOSO, es un reconocimiento que se otorga al final de cada semana.</h4>
+                    </div>                  
+                  </div>
+               <img src="img/MVP.jpg" alt="mvp">
+               <table>
+                <tr>
+                  <th>Ranking</th>
+                  <th>Nombre</th> 
+                  <th>MVP</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>none</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>none</td>
+                  <td>0</td>
+                </tr>
+              </table>  
+                </div>
+
+                <div class="imagen" >
+                  <div class="headerJugador">
+                    <div class="imagenicono">
+                      <img src="img/balondeoro.png" alt="mvpss">
+                    </div>
+                    <div class="texticono">
+                      <p>G O L E S</p>
+                      <h4>JUGADOR MAS VALIOSO, es un reconocimiento que se otorga al final de cada semana.</h4>
+                    </div>                  
+                  </div>
+               <img src="img/goles.jpg" alt="mvp">
+               <table>
+                <tr>
+                  <th>Ranking</th>
+                  <th>Nombre</th> 
+                  <th>Goles</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>none</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>none</td>
+                  <td>0</td>
+                </tr>
+              </table>  
+                </div>
+
+                <div class="imagen" >
+                  <div class="headerJugador">
+                    <div class="imagenicono3">
+                      <img src="img/mvpss.png" alt="mvpss">
+                    </div>
+                    <div class="texticono">
+                      <p>M V P (menores)</p>
+                      <h4>JUGADOR MAS VALIOSO, es un reconocimiento que se otorga al final de cada semana.</h4>
+                    </div>                  
+                  </div>
+               <img src="img/cacho.jpg" alt="mvp">
+               <table>
+                <tr>
+                  <th>Ranking</th>
+                  <th>Nombre</th> 
+                  <th>MVP</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>none</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>none</td>
+                  <td>0</td>
+                </tr>
+              </table>  
+                </div>
+             
+            </div>
+      
+        </center>
+    </div>
+    
+    <script>
         document.getElementById("mi-boton").onclick = function() {
-      this.style.backgroundColor = "#72ff9c";
-    }
-
-    // ruleta
-    var ruleta = document.getElementById('ruleta');
-    var imagenes = Array.from(ruleta.children);
-    var indiceActual = 0;
-    var inicioX;
-
-    ruleta.addEventListener('touchstart', function(evento) {
-        inicioX = evento.touches[0].clientX;
-    }, false);
-
-    ruleta.addEventListener('touchmove', function(evento) {
-        var movimientoX = evento.touches[0].clientX;
-        var diferenciaX = inicioX - movimientoX;
-        var desplazamiento = -100 * indiceActual - diferenciaX / window.innerWidth * 100;
-        imagenes.forEach(function(imagen) {
-            imagen.style.transform = 'translateX(' + desplazamiento + '%)';
-        });
-    }, false);
-
-    ruleta.addEventListener('touchend', function() {
-        if (inicioX < window.innerWidth / 2) {
-            indiceActual--;
-        } else {
-            indiceActual++;
+            this.style.backgroundColor = "#72ff9c";
         }
-        if (indiceActual < 0) indiceActual = 0;
-        if (indiceActual >= imagenes.length) indiceActual = imagenes.length - 1;
-        var desplazamiento = -100 * indiceActual;
-        imagenes.forEach(function(imagen) {
-            imagen.style.transform = 'translateX(' + desplazamiento + '%)';
-        });
-    }, false);
-
-    // Gira la ruleta automáticamente cada 3 segundos
-    setInterval(function() {
-        indiceActual++;
-        if (indiceActual >= imagenes.length) indiceActual = 0;
-        var desplazamiento = -100 * indiceActual;
-        imagenes.forEach(function(imagen) {
-            imagen.style.transform = 'translateX(' + desplazamiento + '%)';
-        });
-    }, 5000);
-    </script>   
+    
+        // ruleta
+        var ruleta = document.getElementById('ruleta');
+        var imagenes = Array.from(ruleta.children);
+        var indiceActual = 0;
+        var inicioX;
+    
+        ruleta.addEventListener('touchstart', function(evento) {
+            inicioX = evento.touches[0].clientX;
+        }, false);
+    
+        ruleta.addEventListener('touchmove', function(evento) {
+            var movimientoX = evento.touches[0].clientX;
+            var diferenciaX = inicioX - movimientoX;
+            var desplazamiento = -100 * indiceActual - diferenciaX / window.innerWidth * 100;
+            imagenes.forEach(function(imagen) {
+                imagen.style.transform = 'translateX(' + desplazamiento + '%)';
+            });
+        }, false);
+    
+        ruleta.addEventListener('touchend', function() {
+            if (inicioX < window.innerWidth / 2) {
+                indiceActual--;
+            } else {
+                indiceActual++;
+            }
+            if (indiceActual < 0) indiceActual = 0;
+            if (indiceActual >= imagenes.length) indiceActual = imagenes.length - 1;
+            var desplazamiento = -100 * indiceActual;
+            imagenes.forEach(function(imagen) {
+                imagen.style.transform = 'translateX(' + desplazamiento + '%)';
+            });
+        }, false);
+    
+        // Gira la ruleta automáticamente cada 3 segundos
+        setInterval(function() {
+            indiceActual++;
+            if (indiceActual >= imagenes.length) indiceActual = 0;
+            var desplazamiento = -100 * indiceActual;
+            imagenes.forEach(function(imagen) {
+                imagen.style.transform = 'translateX(' + desplazamiento + '%)';
+            });
+        }, 7000);
+    </script>
+    
 
 </body>
 
