@@ -64,7 +64,7 @@ clear: both;
         text-align: center; /* Añade esta línea para centrar el texto */
     }
     .menu-wrap {
-      position: fixed;
+      position: absolute;
       top: 0;
       right: 0;
       z-index: 1;

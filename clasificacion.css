@@ -53,7 +53,7 @@ body {
             letter-spacing: 1px;
             }
             .menu-wrap {
-              position: fixed;
+              position: absolute;
               top: 0;
               right: 0;
               z-index: 1;

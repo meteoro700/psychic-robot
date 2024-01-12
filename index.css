@@ -25,7 +25,7 @@
     display: table;
     clear: both;
   }
-        .header{
+       .header{
           width: 100%;
           z-index: 100;
       background:#000000;
@@ -34,17 +34,16 @@
         .titulo{
             background:#000000;
             width: 80%;
-        
         }
         .titulo img{
             padding-top: 28px;
         float: right;
         padding-right: 10px;
-        width: 30px;
+        width: 30px; 
         }
         .titulo h2{
         float: left;
-        color:#fff; 
+        color:#23ca0d; 
         padding-left: 23px;
         padding-top: 17px ;
         font-family: 'winner-sans', sans-serif;
@@ -53,12 +52,11 @@
         letter-spacing: 1px;
         }
         .menu-wrap {
-          position: fixed;
+          position: absolute;  /* Cambia 'fixed' a 'absolute' */
           top: 0;
           right: 0;
           z-index: 1;
         }
-        
         .menu-wrap .toggler {
           position: absolute;
           top: 20px;
@@ -69,7 +67,6 @@
           height: 50px;
           opacity: 0;
         }
-        
         .menu-wrap .hamburger {
           position: absolute;
           top: 20px;
@@ -81,10 +78,8 @@
           background: #ffffff;
           display: flex;
           align-items: center;
-          justify-content: center;
-          
+         justify-content: center; 
         }
-        
         /* Hamburger Line */
         .menu-wrap .hamburger > div {
           position: relative;
@@ -96,7 +91,6 @@
           justify-content: center;
           transition: all 0.4s ease;
         }
-        
         /* Hamburger Lines - Top & Bottom */
         .menu-wrap .hamburger > div:before,
         .menu-wrap .hamburger > div:after {
@@ -108,53 +102,37 @@
           height: 2px;
           background: inherit;
         }
-        
         /* Moves Line Down */
         .menu-wrap .hamburger > div:after {
           top: 10px;
         }
-        
         /* Toggler Animation */
         .menu-wrap .toggler:checked + .hamburger > div {
           transform: rotate(135deg);
         }
-        
         /* Turns Lines Into X */
         .menu-wrap .toggler:checked + .hamburger > div:before,
         .menu-wrap .toggler:checked + .hamburger > div:after {
           top: 0;
           transform: rotate(90deg);
         }
-        
         /* Rotate On Hover When Checked */
         .menu-wrap .toggler:checked:hover + .hamburger > div {
           transform: rotate(225deg);
         }
-        
         /* Show Menu */
         .menu-wrap .toggler:checked ~ .menu {
           visibility: visible;
         }
-        
         .menu-wrap .toggler:checked ~ .menu > div {
           transform: translateX(0);
           transition-duration: 0.5s;
           background: rgb(255, 255, 255);
         }
-        
         .menu-wrap .menu {
-          position: fixed;
-          top: 0;
-          right: 0;
-          width: 100%;
-          height: 100%;
-          visibility: hidden;
-          overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
+          position: fixed;top: 0;right: 0;width: 100%;height: 100%;
+          visibility: hidden; overflow: hidden;display: flex;align-items: center;justify-content: flex-end;
         }
-        
         .menu-wrap .menu > div {
           background: rgba(255, 255, 255, 0);
           width: 100%;
@@ -166,39 +144,20 @@
           transition: all 0.4s ease,background 0.75s ease; 
           transform: translateX(100%);
         }
-        
         .menu-wrap .menu > div > div {
-          text-align: center;
-          max-width: 90vw;
-          max-height: 100vh;
-          opacity: 1;
-          transition: opacity 0.4s ease;
+          text-align: center;max-width: 90vw;max-height: 100vh;opacity: 1;transition: opacity 0.4s ease;
         }
-        
         .menu-wrap .menu > div > div > ul > li {
-          list-style: none;
-          color: #333;
-          font-size: 1.5em;
-          padding: 1em;
-        }
-        
+          list-style: none;color: #333;font-size: 1.5em; padding: 1em;
+        } 
         .menu-wrap .menu > div > div > ul > li > a {
-          color: inherit;
-          text-decoration: none;
-          transition: color 0.4s ease;
+          color: inherit;text-decoration: none;transition: color 0.4s ease;
         }
-        
         .menu-wrap .menu > div > div > ul > li > a:hover {
           color: #ed1c24;
         } 
         #parrafoportada{
-          margin-left: 6%;
-          margin-top: -90%;
-          font-size: 60px;
-          color: #e7e4e4;
-          font-family: 'artistryjnl';
-          font-weight: bold;
-          letter-spacing: 5px;
+          margin-left: 6%;margin-top: -90%;font-size: 60px;color: #e7e4e4;font-family: 'artistryjnl'; font-weight: bold;letter-spacing: 5px;
       } 
       .imagenpelota img{
         width: 100%;
@@ -268,8 +227,8 @@
    justify-content: space-around;
    padding: 10px;
    font-family: Arial, sans-serif;
-   background: #008000;
-   color: #fff;
+   background: #ffffff;
+   color: #0dd127;
    animation: fadeIn 2s;
    margin: 0;
    margin-top: 25%; 
@@ -315,32 +274,19 @@
  font-weight: bold;
  letter-spacing: 3px;
 }
-.carousel {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 50%;
-}
-
-.carousel div {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  width: 100vw;
-  height: 50vh; /* Ajusta esto para cambiar la altura */
-  background: #eee;
-  transform-origin: center center;
-  transform: scale(1);
-  transition: transform 0.5s;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100px;
-}
-
-.carousel div:target {
-  transform: scale(0.8);
-}
+.ruleta {
+        display: flex;
+        overflow: hidden;
+        width: 100vw;
+        height: 300px;
+        border-radius: 15px;  /* Bordes redondeados */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);  /* Sombra suave */
+    }
+    .imagen {
+        flex: 0 0 100%;
+        transition: transform 0.5s;
+        object-fit: cover;  /* Asegura que las imágenes se ajusten correctamente */
+    }
 }
 /**PC**/
 @media (min-width: 991px) {

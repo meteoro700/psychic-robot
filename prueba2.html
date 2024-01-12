@@ -1,44 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-.carousel {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 50%;
-}
-
-.carousel div {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  width: 100vw;
-  height: 50vh; /* Ajusta esto para cambiar la altura */
-  background: #eee;
-  transform-origin: center center;
-  transform: scale(1);
-  transition: transform 0.5s;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100px;
-}
-
-.carousel div:target {
-  transform: scale(0.8);
-}
+  <style>
+    .ruleta {
+        display: flex;
+        overflow: hidden;
+        width: 100vw;
+        height: 300px;
+    }
+    .imagen {
+        flex: 0 0 100%;
+        transition: transform 0.5s;
+    }
 </style>
 </head>
 <body>
+    <div id="ruleta" class="ruleta">
+        <img class="imagen" src="img/amarilla1.png">
+        <img class="imagen" src="img/bienvenida.png">
+        <img class="imagen" src="img/roja1.png">
+        <!-- Agrega más imágenes según lo necesites -->
+    </div>
 
-<div class="carousel">
-  <div id="item-1">1</div>
-  <div id="item-2">2</div>
-  <div id="item-3">3</div>
-  <div id="item-4">4</div>
-  <div id="item-5">5</div>
-</div>
+    <script>
+      var ruleta = document.getElementById('ruleta');
+      var imagenes = Array.from(ruleta.children);
+      var indiceActual = 0;
+      var inicioX;
 
+      ruleta.addEventListener('touchstart', function(evento) {
+          inicioX = evento.touches[0].clientX;
+      }, false);
+
+      ruleta.addEventListener('touchmove', function(evento) {
+          var movimientoX = evento.touches[0].clientX;
+          var diferenciaX = inicioX - movimientoX;
+          var desplazamiento = -100 * indiceActual - diferenciaX / window.innerWidth * 100;
+          imagenes.forEach(function(imagen) {
+              imagen.style.transform = 'translateX(' + desplazamiento + '%)';
+          });
+      }, false);
+
+      ruleta.addEventListener('touchend', function() {
+          if (inicioX < window.innerWidth / 2) {
+              indiceActual--;
+          } else {
+              indiceActual++;
+          }
+          if (indiceActual < 0) indiceActual = 0;
+          if (indiceActual >= imagenes.length) indiceActual = imagenes.length - 1;
+          var desplazamiento = -100 * indiceActual;
+          imagenes.forEach(function(imagen) {
+              imagen.style.transform = 'translateX(' + desplazamiento + '%)';
+          });
+      }, false);
+
+      // Gira la ruleta automáticamente cada 3 segundos
+      setInterval(function() {
+          indiceActual++;
+          if (indiceActual >= imagenes.length) indiceActual = 0;
+          var desplazamiento = -100 * indiceActual;
+          imagenes.forEach(function(imagen) {
+              imagen.style.transform = 'translateX(' + desplazamiento + '%)';
+          });
+      }, 5000);
+  </script>
 </body>
 </html>
