@@ -2,41 +2,108 @@
 <html>
 <head>
 <style>
-body {
-  margin: 0;
-  font-size: 28px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.header {
-  background-color: #333;
+.acordeon-header {
+  cursor: pointer;
+  background-color: #eee;
   padding: 10px;
-  color: #ffffff;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
+  margin: 5px;
+  border: 1px solid #ddd;
 }
 
-.content {
-  padding: 100px 0;
-  margin: 50px auto;
-  width: 80%;
-  height: 2000px;
+.acordeon-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  padding: 0 10px;
+  margin: 0 5px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 </style>
 </head>
 <body>
+  <div class="acordeon">
+    <div class="acordeon-header">
+      <h2>M V P</h2>
+    </div>
+    <div class="acordeon-content">
+      <div class="headerJugador">
+        <div class="imagenicono">
+          <img src="img/mvpss.png" alt="mvpss">
+        </div>
+        <div class="texticono">
+          <p>M V P</p>
+          <h4>JUGADOR MAS VALIOSO, es un reconocimiento que se otorga al final de cada semana.</h4>
+        </div>                  
+      </div>
+   <img src="img/MVP.jpg" alt="mvp">
+   <table>
+    <tr>
+      <th>Ranking</th>
+      <th>Nombre</th> 
+      <th>MVP</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>none</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>none</td>
+      <td>0</td>
+    </tr>
+  </table>  
+    </div>
+    <div class="acordeon-header">
+      <h2>G O L E S</h2>
+    </div>
+    <div class="acordeon-content">
+      <div class="headerJugador">
+        <div class="imagenicono3">
+          <img src="img/mvpss.png" alt="mvpss">
+        </div>
+        <div class="texticono">
+          <p>M V P (menores)</p>
+          <h4>JUGADOR MAS VALIOSO, es un reconocimiento que se otorga al final de cada semana.</h4>
+        </div>                  
+      </div>
+   <img src="img/cacho.jpg" alt="mvp">
+   <table>
+    <tr>
+      <th>Ranking</th>
+      <th>Nombre</th> 
+      <th>MVP</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>none</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>none</td>
+      <td>0</td>
+    </tr>
+  </table>  
+    </div>
+  </div>
 
-<div class="header">
-  <h2>AMBITS</h2>
-  <p>INICIO | NOSOTROS | PRODUCTOS | FORO</p>
-</div>
+  <script>
+  var acordeon = document.getElementsByClassName('acordeon-header');
+for (var i = 0; i < acordeon.length; i++) {
+  acordeon[i].addEventListener('click', function() {
+    this.classList.toggle('active');
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
 
-<div class="content">
-  <h1>Contenido Principal</h1>
-  <p>Desplázate hacia abajo para ver cómo el encabezado se mantiene en la parte superior de la página.</p>
-</div>
-
+  </script>
 </body>
 </html>

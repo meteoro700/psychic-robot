@@ -236,3 +236,69 @@ text-align: center;
   }
  
 } 
+    /**PC**/
+    @media (min-width: 991px){
+      .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+           .header{
+            display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              z-index: 100;
+          background:#000000;
+          padding-bottom:2%;
+          position: fixed;
+          top: 0;
+            }
+            .titulo{
+                background:#000000;
+                width: 73%;
+                margin-top: -3%;
+            }
+            .titulo img{
+              display: none;
+            }
+            .uno h2{
+            color:#23ca0d; 
+            font-family: 'winner-sans', sans-serif;
+            font-size: 25px; transform: scaleY(1.5);
+            font-weight: 100;
+            letter-spacing: 2px;
+            }
+            .uno{
+             float: left;
+             background-color: #000000;
+             margin-top: -2%;
+            }
+            .dos{
+              float: right;
+              background-color: rgb(0, 0, 0);
+              padding-right: 3%;
+              margin-top: 1%;
+            }
+          
+            .menu-wrap {
+              display: none; /* Esto oculta el menú en PC */
+            }
+            a {
+              display: inline-block;
+              font-family: Arial, sans-serif;
+              font-size: 15px;
+              text-decoration: none;
+              color: #ffffff;
+              transition: all 0.3s ease;
+            }
+            .imagenderecha img{
+              width: 40px;
+            }
+            .imagenderecha{
+            width: 2%;
+            margin-left: 3%;
+           margin-top: 1%;
+            }
+    }
+    
