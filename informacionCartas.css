@@ -234,7 +234,26 @@ text-align: center;
      margin-left: 10%;
      margin-right:10%;
   }
- 
+  .uno {
+    display: none; /* Esto oculta el menú en PC */
+  }
+  .dos {
+    display: none; /* Esto oculta el menú en PC */
+  }
+  .imagenderecha img{
+    display: none; /* Esto oculta el menú en PC */
+  }
+  .imagenderecha{
+    display: none; /* Esto oculta el menú en PC */
+  }
+  .portada01{
+  width: 100%;
+
+  }  
+  .portada02{
+    display: none; /* Esto oculta el menú en PC */
+
+  }  
 } 
     /**PC**/
     @media (min-width: 991px){

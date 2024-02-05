@@ -235,10 +235,10 @@ text-align: center;
      margin-right:10%;
     }
     table {
-      
+      margin-top: 15%;
       width: 100%;
       border-collapse: collapse;
-      margin: 15px 0;
+
       font-size: 0.9em;
       min-width: 300px;
       box-shadow: 0 40px 40px rgba(0, 0, 0, 0.15);
@@ -273,6 +273,26 @@ text-align: center;
     box-shadow: 0 0 20px rgba(12, 201, 12, 0.377);
     font-size: 2em;
 }
+.uno {
+  display: none; /* Esto oculta el menú en PC */
+}
+.dos {
+  display: none; /* Esto oculta el menú en PC */
+}
+.imagenderecha img{
+  display: none; /* Esto oculta el menú en PC */
+}
+.imagenderecha{
+  display: none; /* Esto oculta el menú en PC */
+}
+.portada01{
+width: 100%;
+
+}  
+.portada02{
+  display: none; /* Esto oculta el menú en PC */
+
+}  
 } 
     /**PC**/
     @media (min-width: 991px){

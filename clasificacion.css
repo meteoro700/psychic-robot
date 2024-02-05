@@ -392,7 +392,26 @@ tr:nth-child(1) { font-size: 10px; }  /* 6to nombre en adelante */
   background-color: #eb9595; /* Color de fondo rojo */
   color: #FFFFFF; /* Color de texto blanco */
 }
+.uno {
+  display: none; /* Esto oculta el menú en PC */
+}
+.dos {
+  display: none; /* Esto oculta el menú en PC */
+}
+.imagenderecha img{
+  display: none; /* Esto oculta el menú en PC */
+}
+.imagenderecha{
+  display: none; /* Esto oculta el menú en PC */
+}
+.portada01{
+width: 100%;
 
+}  
+.portada02{
+  display: none; /* Esto oculta el menú en PC */
+
+}  
     }
     /**PC**/
 @media (min-width: 991px){
