@@ -21,7 +21,12 @@ body {
       src: url('font/Isra Regular.ttf') format('truetype');
     }
     
-    
+    @media (orientation: landscape) {
+      body {
+          visibility: hidden;
+          
+      }
+}    
 /**CELULAR **/
 @media (max-width: 767px) {
 .clearfix::after {
