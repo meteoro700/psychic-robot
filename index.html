@@ -73,23 +73,7 @@
                     </div>                  
                   </div>
                <img src="img/goles.jpg" alt="mvpa">
-               <table>
-                <tr>
-                  <th>Ranking</th>
-                  <th>Nombre</th> 
-                  <th>MVP</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>none</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>none</td>
-                  <td>0</td>
-                </tr>
-              </table>  
+
                 </div>
 
                 <div class="imagen" >
@@ -103,23 +87,8 @@
                     </div>                  
                   </div>
                <img src="img/goles.jpg" alt="mvp">
-               <table>
-                <tr>
-                  <th>Ranking</th>
-                  <th>Nombre</th> 
-                  <th>Goles</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>none</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>none</td>
-                  <td>0</td>
-                </tr>
-              </table>  
+          
+
                 </div>
 
                 <div class="imagen" >
@@ -133,27 +102,37 @@
                     </div>                  
                   </div>
                <img src="img/cacho.jpg" alt="mvp">
-               <table>
-                <tr>
-                  <th>Ranking</th>
-                  <th>Nombre</th> 
-                  <th>MVP</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>none</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>none</td>
-                  <td>0</td>
-                </tr>
-              </table>  
                 </div>
-             
+
             </div>
+      <hr>
+      <div class="pie">
+        <h4>DAGUS MEGA</h4>
+        <hr>
+        <div class="imagenpie">
+          <img src="img/counter.png" alt="mvpss">
+        </div>
+
+        <div class="textpie">
       
+          <p>si quieres sugerir algun cambio,contribuir o algun error. Hazmelo Saber:</p>
+        </div>  
+      
+
+       <div class="contact-form">
+        <textarea type="text" id="message" placeholder="Sugerencia..." rows="5" cols="40">
+          </textarea>
+      
+          <input type="submit" value="Enviar" onclick="sendToWhatsApp()" class="buttonenviar">
+    </div>
+    <script>
+        function sendToWhatsApp() {
+            var message = document.getElementById('message').value;
+            var whatsappUrl = 'https://wa.me/59171895952?text=' + encodeURIComponent(message);
+            window.open(whatsappUrl);
+        }
+    </script>
+      </div>
         </center>
     </div>
     

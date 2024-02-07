@@ -284,10 +284,11 @@
         display: flex;
         overflow: hidden;
         width: 100vw;
-        height: 440px;
+        height: 90vw;
         border-radius: 3px;  /* Bordes redondeados */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);  /* Sombra suave */
         margin-bottom: 10%;
+        margin-top: 10%;
     }
     .imagen {
         flex: 0 0 98%;
@@ -334,7 +335,7 @@
       margin-right: 5%;
     }
     .imagen table{
-      width: 97%;
+      width: 85%;
       border-collapse: collapse;
     }
     th, td {
@@ -368,7 +369,87 @@
   .portada02{
     display: none; /* Esto oculta el menú en PC */
 
+  }
+  .pie{
+    background-color: #000;
+    margin-top: 12%;
+  margin-bottom: -25%;
+  padding-bottom: 20%;
   }  
+  .imagenpie{
+float: left;
+width: 15%;
+padding: 0;
+  }
+  .textpie{
+    padding: 0;
+    float: right;
+    width: 67%;
+    margin-left: 10%;
+    margin-right: 5%;
+  }
+  .imagenpie img{
+    width: 90%;
+    padding-left: 50%;
+  }
+  .textpie p {
+  
+    color: #ddd;
+    font-size: 14px;
+  }
+  .pie h4{
+    color: #cfcfcf;
+   padding-top: 5%;
+   font-size: 35px;
+   font-family: 'winner-sans';
+   margin-bottom: 5%;
+ 
+  }
+  .contact-form{
+    padding-top: 30%;
+  }
+  .buttonenviar{
+    display: inline-block;
+    padding: 13px 1px; /* Aumenta el padding para un botón más grande */
+    font-size: 22px; /* Aumenta el tamaño de la fuente para un texto más grande */
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #1af05a;
+    background-color: #039203;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 5px 5px #0f4904d8;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    transition: color 0.5s;
+    width: 85%; /* Ajusta el ancho del botón */
+    font-family: 'botton';
+    margin-top: 5%;
+ 
+  }
+
+
+  
+  .buttonenviar:hover {
+    color: #000;
+  }
+  
+  .buttonenviar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+  }
+
 }
 /**PC**/
 @media (min-width: 991px) {
