@@ -2,170 +2,56 @@
 <html>
 <head>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+   <details>
+    <summary>-- L O G R O S -- <i class="icon fa-solid fa-chevron-down"></i> </summary>
+    <DIV>
+      penal ddddddddddddddddd
+    </DIV>
+  </details>
+
+  
+/* Estilo para el botón del acordeón */
+button.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
 }
 
-.ranking {
-  list-style: none;
-  padding: 0;
-  width: 50%;
-  margin: auto;
-  display: none; /* Oculta las listas por defecto */
-}
-.ranking.active {
-  display: block; /* Muestra la lista cuando está activa */
-}
-
-.ranking li {
-  background-color: #f2f2f2;
-  margin: 10px 0;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  transition: all 0.5s ease;
-}
-
-.ranking li:nth-child(1) {
-  font-size: 2em;
-  padding: 40px;
-  background-color: #1abc9c;
-  color: white;
-}
-
-.ranking li:nth-child(2) {
-  font-size: 1.8em;
-  padding: 35px;
-  background-color: #3498db;
-  color: white;
-}
-
-.ranking li:nth-child(3) {
-  font-size: 1.6em;
-  padding: 30px;
-  background-color: #9b59b6;
-  color: white;
-}
-
-.ranking li:nth-child(4) {
-  font-size: 1.4em;
-  padding: 25px;
-  background-color: #e67e22;
-  color: white;
-}
-
-.ranking li:nth-child(5) {
-  font-size: 1.2em;
-  padding: 20px;
-  background-color: #e74c3c;
-  color: white;
-}
-
-.ranking li:nth-child(n+6) {
-  font-size: 1em;
-  padding: 15px;
-}
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-  left: 100%;
-  top: 0;
-}
-
-.icon {
-  width: 50px;
-  height: 50px;
-  display: inline-block; /* Añade esta línea */
+/* Estilo para el panel del acordeón */
+div.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 </style>
 </head>
 <body>
-  
-  <div class="dropdown" onclick="toggleMenu()">
-    <img src="menu_icon.png" alt="Menu">
-    <div class="dropdown-content" id="dropdown-content">
-      <img src="img/goles.png" alt="Goles" class="icon" onclick="showRanking('goles')">
-      <img src="img/targeta.png" alt="Tarjetas" class="icon" onclick="showRanking('tarjetas')">
-      <img src="img/mvpss.png" alt="MVP" class="icon" onclick="showRanking('mvp')">
-      
-    </div>
-  </div>
-  <br><br>
-  <ul class="ranking" id="goles">
-      <li>JCristian</li>
-      <li>Jugador 2</li>
-      <li>Jugador 3</li>
-      <li>Jugador 4</li>
-      <li>Jugador 5</li>
-      <li>Jugador 6</li>
-      <li>Jugador 7</li>
-      <li>Jugador 8</li>
-      <li>Jugador 9</li>
-      <li>Jugador 10</li>
-  </ul>
-  
-  <ul class="ranking" id="tarjetas">
-    <li>Nino</li>
-    <li>Jugador 2</li>
-    <li>Jugador 3</li>
-    <li>Jugador 4</li>
-    <li>Jugador 5</li>
-    <li>Jugador 6</li>
-    <li>Jugador 7</li>
-    <li>Jugador 8</li>
-    <li>Jugador 9</li>
-    <li>Jugador 10</li>
-  </ul>
-  
-  <ul class="ranking" id="mvp">
-    <li>Chelelo</li>
-    <li>Jugador 2</li>
-    <li>Jugador 3</li>
-    <li>Jugador 4</li>
-    <li>Jugador 5</li>
-    <li>Jugador 6</li>
-    <li>Jugador 7</li>
-    <li>Jugador 8</li>
-    <li>Jugador 9</li>
-    <li>Jugador 10</li>
-  </ul>
-  
-  <script>
-  function toggleMenu() {
-  var dropdownContent = document.getElementById('dropdown-content');
-  if (dropdownContent.style.display === 'none') {
-    dropdownContent.style.display = 'block';
-  } else {
-    dropdownContent.style.display = 'none';
-  }
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
 }
-
-function showRanking(id) {
-  // Oculta todas las listas
-  var rankings = document.querySelectorAll('.ranking');
-  for (var i = 0; i < rankings.length; i++) {
-    rankings[i].classList.remove('active');
-  }
-
-  // Muestra la lista correspondiente
-  document.getElementById(id).classList.add('active');
-
-  // Cierra el menú
-  document.getElementById('dropdown-content').style.display = 'none';
-}
-  </script>
-  
+</script>
 
 </body>
 </html>
